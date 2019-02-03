@@ -11,6 +11,15 @@
 |
 */
 
+Route::get('/admin', 'AdminController@index')->name('admin');
+
+Route::get('/login', 'SessionController@login')->name('login');
+Route::post('/login', 'SessionController@loginStore')->name('login.store');
+Route::get('/logout', 'SessionController@destroy')->name('logout');
+
+//Route::get('/', 'MainController@index')->name('main');
+//Route::get('/{id}', 'MainController@page')->name('page');
+
 Route::get('/', function () {
     return view('welcome');
 });
