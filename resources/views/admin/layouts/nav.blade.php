@@ -1,7 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Cesar Castro
- * Date: 2/3/2019
- * Time: 6:45 PM
- */
+<nav class="main-header navbar navbar-expand bg-primary navbar-dark border-bottom">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="/" class="nav-link">Home</a>
+        </li>
+    </ul>
+</nav>
