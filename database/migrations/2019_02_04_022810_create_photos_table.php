@@ -17,13 +17,10 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->smallInteger('type_id');
             $table->integer('tour_id');
-            $table->integer('category_id');
             $table->string('title', 255);
             $table->string('image', 255);
-            $table->string('image_thumb', 255);
             $table->float('size');
-            $table->string('description', 255);
-            $table->string('tags', 255);
+            $table->string('description', 255)->nullable();
             $table->integer('order');
             $table->tinyInteger('status');
             $table->timestamps();

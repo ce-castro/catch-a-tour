@@ -18,7 +18,7 @@ class CreateSlidersTable extends Migration
             $table->integer('title');
             $table->integer('subtitle');
             $table->string('image', 255);
-            $table->float('size');
+            $table->float('size')->nullable();
             $table->integer('order');
             $table->tinyInteger('status');
             $table->timestamps();

@@ -22,9 +22,9 @@ class CreateToursTable extends Migration
             $table->float('child');
             $table->text('available', 255);
             $table->text('duration', 20);
-            $table->text('includes');
-            $table->text('does_not_includes');
-            $table->text('additional_info', 255);
+            $table->text('includes')->nullable();
+            $table->text('does_not_include')->nullable();
+            $table->text('additional_info', 255)->nullable();
             $table->text('how_to_get', 255);
             $table->text('keywords', 255);
             $table->text('description_html', 255);

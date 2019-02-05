@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
+    @yield('css')
     <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    @yield('css')
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -28,10 +29,7 @@
                         <h1 class="m-0 text-dark">@yield('h1')</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v2</li>
-                        </ol>
+                        @yield('bread')
                     </div><!-- /.col -->
                 </div><!-- /.row -->
             </div><!-- /.container-fluid -->
@@ -40,12 +38,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
-                <!-- /.row -->
-                <!-- Main row -->
-                <!-- /.row (main row) -->
-            </div><!-- /.container-fluid -->
+            @yield('content')
         </section>
         <!-- /.content -->
     </div>
@@ -68,5 +61,6 @@
 <script src="{{ asset('plugins/fastclick/fastclick.js') }}"></script>
 <script src="{{ asset('js/adminlte.js') }}"></script>
 @yield('js')
+@yield('scripts')
 </body>
 </html>

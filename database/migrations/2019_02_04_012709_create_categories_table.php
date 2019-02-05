@@ -21,7 +21,6 @@ class CreateCategoriesTable extends Migration
             $table->text('desc_bottom');
             $table->text('keywords', 255);
             $table->text('description_html', 255);
-            $table->text('image_og', 255);
             $table->tinyInteger('status');
             $table->timestamps();
         });

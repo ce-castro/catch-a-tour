@@ -13,33 +13,38 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <li class="nav-item">
-                    <a href="pages/widgets.html" class="nav-link">
-                        <i class="nav-icon fa fa-th"></i>
-                        <p>
-                            Widgets
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item has-treeview">
+                {{--<li class="nav-item">--}}
+                    {{--<a href="pages/widgets.html" class="nav-link">--}}
+                        {{--<i class="nav-icon fa fa-th"></i>--}}
+                        {{--<p>--}}
+                            {{--Widgets--}}
+                            {{--<span class="right badge badge-danger">New</span>--}}
+                        {{--</p>--}}
+                    {{--</a>--}}
+                {{--</li>--}}
+                <li class="nav-item has-treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/categories") !== false) active menu-open @endif">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-edit"></i>
-                        <p>
-                            Forms
+                        <p>Categories
                             <i class="fa fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/forms/general.html" class="nav-link">
+                            <a href="pages/forms/general.html" class="nav-link  @if($_SERVER['REDIRECT_URL'] == "/admin/categories") active @endif">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>General Elements</p>
+                                <p>View</p>
+                            </a>
+                        </li>
+                        <li class="nav-item @if($_SERVER['REDIRECT_URL'] == "/admin/categories/create") active @endif">
+                            <a href="pages/forms/general.html" class="nav-link @if($_SERVER['REDIRECT_URL'] == "/admin/categories/create") active @endif">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Add</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">EXAMPLES</li>
+                {{--<li class="nav-header">EXAMPLES</li>--}}
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

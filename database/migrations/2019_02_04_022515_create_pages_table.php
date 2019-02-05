@@ -20,7 +20,7 @@ class CreatePagesTable extends Migration
             $table->text('content');
             $table->text('keywords', 255);
             $table->text('description_html', 255);
-            $table->text('image_og', 255);
+            $table->text('image_og', 255)->nullable();
             $table->tinyInteger('status');
             $table->timestamps();
         });
