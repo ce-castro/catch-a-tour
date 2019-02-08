@@ -23,24 +23,6 @@
     {{--@endif--}}
 
     {{--@if (Auth::user()->role_id == 1)--}}
-    <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/subcategories") !== false) active menu-open @endif">
-        <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i> <span>Sub - Categories</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-        <ul class="treeview-menu">
-            <li @if($_SERVER['REDIRECT_URL'] == "/admin/subcategories") class="active" @endif>
-                <a href="{{ asset('/admin/subcategories') }}"><i class="fa fa-list" aria-hidden="true"></i> View</a>
-            </li>
-            <li @if($_SERVER['REDIRECT_URL'] == "/admin/subcategories/create") class="active" @endif>
-                <a href="{{ asset('/admin/subcategories/create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Add</a>
-            </li>
-        </ul>
-    </li>
-    {{--@endif--}}
-
-    {{--@if (Auth::user()->role_id == 1)--}}
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/sliders") !== false) active menu-open @endif">
         <a href="#"><i class="fa fa-sliders" aria-hidden="true"></i> <span>Home Slider</span>
             <span class="pull-right-container">

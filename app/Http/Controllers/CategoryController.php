@@ -19,10 +19,11 @@ class CategoryController extends Controller {
         $this->validate($request, [
             'name' => 'required',
             'url' => 'required',
-            'description' => 'required',
+            'desc_top' => 'required',
+            'desc_bottom' => 'required',
         ]);
 
-        $input = $request->except(['status', 'frontpage']);
+        $input = $request->except(['status']);
 
         if($request->status == 1){
             $input['status'] = 1;
@@ -30,22 +31,18 @@ class CategoryController extends Controller {
             $input['status'] = 0;
         }
 
-        if($request->frontpage == 1){
-            $input['frontpage'] = 1;
-        } else {
-            $input['frontpage'] = 0;
-        }
-
         $data = Category::create($input);
 
         session()->flash('message_green', 'Category successfully added!');
-        return redirect(route('categories.edit', [$data->id, 'tab_1'] ));
+//        return redirect(route('categories.edit', [$data->id, 'tab_1'] ));
+        return redirect(route('categories.index'));
     }
 
+
     public function edit(Category $category){
-        $photos = Photo::where('category_id', $category->id)->orderBy('title', 'asc')->get();
-        $faqs = Faq::where('category_id', $category->id)->get();
-        return view('admin.categories.edit', compact('category', 'photos', 'faqs'));
+//        $photos = Photo::where('category_id', $category->id)->orderBy('title', 'asc')->get();
+//        $faqs = Faq::where('category_id', $category->id)->get();
+        return view('admin.categories.edit', compact('category'));
     }
 
     public function update($id, Request $request){
@@ -54,7 +51,8 @@ class CategoryController extends Controller {
         $this->validate($request, [
             'name' => 'required',
             'url' => 'required',
-            'description' => 'required',
+            'desc_top' => 'required',
+            'desc_bottom' => 'required',
         ]);
 
         //$input = $request->all();

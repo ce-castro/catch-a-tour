@@ -15,3 +15,7 @@ var slug = function(str) {
 
     return str;
 };
+
+function convert() {
+    $("#url").val(slug($("#name").val()));
+}
