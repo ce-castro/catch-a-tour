@@ -19,8 +19,8 @@ class CreateCategoriesTable extends Migration
             $table->string('url', 255);
             $table->text('desc_top');
             $table->text('desc_bottom');
-            $table->text('keywords', 255);
-            $table->text('description_html', 255);
+            $table->text('keywords', 255)->nullable();
+            $table->text('description_html', 255)->nullable();
             $table->tinyInteger('status');
             $table->timestamps();
         });

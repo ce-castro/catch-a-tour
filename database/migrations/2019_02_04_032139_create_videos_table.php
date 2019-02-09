@@ -17,7 +17,7 @@ class CreateVideosTable extends Migration
             $table->increments('id');
             $table->integer('tour_id');
             $table->string('title', 255);
-            $table->string('code');
+            $table->string('code')->nullable();
             $table->timestamps();
         });
     }

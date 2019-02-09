@@ -2,11 +2,9 @@
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('vendors/iCheck/square/blue.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/datatables/datatables.min.css') }}">
 @endsection
 
 @section('js')
-    <script src="{{ asset('vendors/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('vendors/iCheck/icheck.min.js') }}"></script>
     <script src="{{ asset('vendors/ckeditor/ckeditor.js') }}"></script>
 @endsection

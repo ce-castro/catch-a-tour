@@ -18,7 +18,7 @@ class CreatePhotosTable extends Migration
             $table->smallInteger('type_id');
             $table->integer('tour_id');
             $table->string('title', 255);
-            $table->string('image', 255);
+            $table->string('image', 255)->nullable();
             $table->float('size');
             $table->string('description', 255)->nullable();
             $table->integer('order');
