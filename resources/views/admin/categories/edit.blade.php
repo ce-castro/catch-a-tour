@@ -124,8 +124,7 @@
                         </button>
                         <a href="{{ route('categories.delete', $category->id) }}"
                            class="btn btn-danger pull-right btn-flat"
-                           onclick="return confirm('Delete {{ $category->name }}?');"><i class="fa fa-trash"
-                                                                                         aria-hidden="true"></i>&nbsp;&nbsp;Delete</a>
+                           onclick="return confirm('Delete {{ $category->name }}?');"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;&nbsp;Delete</a>
                     </div>
 
                 </form>

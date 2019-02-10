@@ -34,6 +34,13 @@ Route::post('/admin/pages', 'PageController@store')->name('pages.store');
 Route::patch('/admin/pages/{id}', 'PageController@update')->name('pages.update');
 Route::get('/admin/pages/{page}/delete', 'PageController@destroy')->name('pages.delete');
 
+Route::get('/admin/users', 'UserController@index')->name('users.index');
+Route::get('/admin/users/create', 'UserController@create')->name('users.create');
+Route::get('/admin/users/{user}/edit', 'UserController@edit')->name('users.edit');
+Route::post('/admin/users', 'UserController@store')->name('users.store');
+Route::patch('/admin/users/{id}', 'UserController@update')->name('users.update');
+Route::get('/admin/users/{user}/delete', 'UserController@destroy')->name('users.delete');
+
 Route::get('/login', 'SessionController@login')->name('login');
 Route::post('/login', 'SessionController@loginStore')->name('login.store');
 Route::get('/logout', 'SessionController@destroy')->name('logout');
@@ -44,3 +51,7 @@ Route::get('/logout', 'SessionController@destroy')->name('logout');
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

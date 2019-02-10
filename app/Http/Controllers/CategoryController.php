@@ -31,7 +31,7 @@ class CategoryController extends Controller {
             $input['status'] = 0;
         }
 
-        $data = Category::create($input);
+        Category::create($input);
 
         session()->flash('message_green', 'Category successfully added!');
 //        return redirect(route('categories.edit', [$data->id, 'tab_1'] ));
