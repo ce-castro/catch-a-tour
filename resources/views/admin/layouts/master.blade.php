@@ -67,7 +67,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <strong>Copyright &copy; {{ date('Y') }} <a href="#">JS Tour and Travel</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; {{ date('Y') }} <a href="#">TBD</a>.</strong> All rights reserved.
     </footer>
 
 </div>

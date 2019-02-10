@@ -17,7 +17,7 @@ class CreateCategoryTourTable extends Migration
             $table->increments('id');
             $table->integer('category_id');
             $table->integer('tour_id');
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 

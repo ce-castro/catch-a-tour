@@ -27,6 +27,12 @@ Route::post('/admin/sliders', 'SliderController@store')->name('sliders.store');
 Route::patch('/admin/sliders/{id}', 'SliderController@update')->name('sliders.update');
 Route::get('/admin/sliders/{slider}/delete', 'SliderController@destroy')->name('sliders.delete');
 
+Route::post('/admin/photos', 'PhotoController@store')->name('photos.store');
+Route::get('/admin/photos/{photo}/edit', 'PhotoController@edit')->name('photos.edit');
+Route::patch('/admin/photos/{id}', 'PhotoController@update')->name('photos.update');
+Route::get('/admin/photos/{photo}/{tour_id}/delete', 'PhotoController@destroy')->name('photos.delete');
+Route::get('/admin/photos/{photo}/{category_id}/deletecat', 'PhotoController@destroycat')->name('photos.deletecat');
+
 Route::get('/admin/pages', 'PageController@index')->name('pages.index');
 Route::get('/admin/pages/create', 'PageController@create')->name('pages.create');
 Route::get('/admin/pages/{page}/edit', 'PageController@edit')->name('pages.edit');
@@ -34,12 +40,24 @@ Route::post('/admin/pages', 'PageController@store')->name('pages.store');
 Route::patch('/admin/pages/{id}', 'PageController@update')->name('pages.update');
 Route::get('/admin/pages/{page}/delete', 'PageController@destroy')->name('pages.delete');
 
+Route::get('/admin/tours', 'TourController@index')->name('tours.index');
+Route::get('/admin/tours/create', 'TourController@create')->name('tours.create');
+Route::get('/admin/tours/{tour}/edit/{tab}', 'TourController@edit')->name('tours.edit');
+Route::post('/admin/tours', 'TourController@store')->name('tours.store');
+Route::patch('/admin/tours/{id}', 'TourController@update')->name('tours.update');
+Route::get('/admin/tours/{tour}/delete', 'TourController@destroy')->name('tours.delete');
+
 Route::get('/admin/users', 'UserController@index')->name('users.index');
 Route::get('/admin/users/create', 'UserController@create')->name('users.create');
 Route::get('/admin/users/{user}/edit', 'UserController@edit')->name('users.edit');
 Route::post('/admin/users', 'UserController@store')->name('users.store');
 Route::patch('/admin/users/{id}', 'UserController@update')->name('users.update');
 Route::get('/admin/users/{user}/delete', 'UserController@destroy')->name('users.delete');
+
+Route::post('/admin/schedules', 'TourScheduleController@store')->name('schedules.store');
+Route::get('/admin/schedules/{schedule}/edit', 'TourScheduleController@edit')->name('schedules.edit');
+Route::patch('/admin/schedules/{id}', 'TourScheduleController@update')->name('schedules.update');
+Route::get('/admin/schedules/{schedule}/{tour_id}/delete', 'TourScheduleController@destroy')->name('schedules.delete');
 
 Route::get('/login', 'SessionController@login')->name('login');
 Route::post('/login', 'SessionController@loginStore')->name('login.store');

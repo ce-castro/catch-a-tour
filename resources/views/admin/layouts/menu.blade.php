@@ -4,7 +4,7 @@
     <!-- Optionally, you can add icons to the links -->
     <li><a href="{{ asset('/admin') }}"><i class="fa fa-home"></i> <span>Home</span></a></li>
 
-    {{--@if (Auth::user()->role_id == 1)--}}
+    @if (Auth::user()->role_id == 1)
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/categories") !== false) active menu-open @endif">
         <a href="#"><i class="fa fa-list-alt" aria-hidden="true"></i> <span>Categories</span>
             <span class="pull-right-container">
@@ -20,9 +20,9 @@
             </li>
         </ul>
     </li>
-    {{--@endif--}}
+    @endif
 
-    {{--@if (Auth::user()->role_id == 1)--}}
+    @if (Auth::user()->role_id == 1)
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/sliders") !== false) active menu-open @endif">
         <a href="#"><i class="fa fa-sliders" aria-hidden="true"></i> <span>Home Slider</span>
             <span class="pull-right-container">
@@ -38,9 +38,9 @@
             </li>
         </ul>
     </li>
-    {{--@endif--}}
+    @endif
 
-    {{--@if (Auth::user()->role_id == 1)--}}
+    @if (Auth::user()->role_id == 1)
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/pages") !== false) active menu-open @endif">
         <a href="#"><i class="fa fa-file-text-o" aria-hidden="true"></i> <span>Pages</span>
             <span class="pull-right-container">
@@ -56,9 +56,9 @@
             </li>
         </ul>
     </li>
-    {{--@endif--}}
+    @endif
 
-    {{--@if (Auth::user()->role_id == 1)--}}
+    @if (Auth::user()->role_id == 1)
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/tours") !== false) active menu-open @endif">
         <a href="#"><i class="fa fa-globe" aria-hidden="true"></i> <span>Tours</span>
             <span class="pull-right-container">
@@ -74,9 +74,9 @@
             </li>
         </ul>
     </li>
-    {{--@endif--}}
+    @endif
 
-    {{--@if (Auth::user()->role_id == 1)--}}
+    @if (Auth::user()->role_id == 1)
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/pdfconfirmations") !== false) active menu-open @endif">
         <a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>PDF Templates</span>
             <span class="pull-right-container">
@@ -92,7 +92,7 @@
             </li>
         </ul>
     </li>
-    {{--@endif--}}
+    @endif
 
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/confirmations") !== false) active menu-open @endif">
         <a href="#"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span>Confirmations</span>
@@ -110,7 +110,7 @@
         </ul>
     </li>
 
-    {{--@if (Auth::user()->role_id == 1)--}}
+    @if (Auth::user()->role_id == 1)
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/users") !== false) active menu-open @endif">
         <a href="#"><i class="fa fa-user" aria-hidden="true"></i> <span>Users</span>
             <span class="pull-right-container">
@@ -126,12 +126,6 @@
             </li>
         </ul>
     </li>
-    {{--@endif--}}
-
-    {{--@if (Auth::user()->role_id == 1)--}}
-        <li @if($_SERVER['REDIRECT_URL'] == "/admin/settings/") class="active" @endif">
-            <a href="{{ asset('/admin/settings/1/edit') }}" href="#"><i class="fa fa-cog" aria-hidden="true"></i> <span>Site Settings</span></a>
-        </li>
-    {{--@endif--}}
+    @endif
 
 </ul>

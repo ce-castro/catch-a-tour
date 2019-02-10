@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Tour;
 use App\Category;
-use App\SubCategory;
 use App\Photo;
 use App\TourSchedule;
-use App\TourPrice;
-use App\Faq;
 use Illuminate\Http\Request;
 //use DB;
 
@@ -21,23 +18,19 @@ class TourController extends AdminController
 
     public function create(){
         $listcategories = Category::orderBy('name', 'asc')->get();
-        $listsub = SubCategory::orderBy('title', 'asc')->get();
-        return view('admin.tours.create', compact('listcategories', 'listsub'));
+//        $listsub = SubCategory::orderBy('title', 'asc')->get();
+        return view('admin.tours.create', compact('listcategories'));
     }
 
     public function store(Request $request){
 
-
         $this->validate($request, [
             'name' => 'required',
-            'sku' => 'required',
             'url' => 'required',
-            'includes' => 'required',
-            'orden' => 'required',
-            'category_id' => 'required',
+            'order' => 'required',
         ]);
 
-        $input = $request->except(['status']);
+        $input = $request->except(['status', 'category_id']);
 
         if($request->status == 1){
             $input['status'] = 1;
@@ -47,7 +40,7 @@ class TourController extends AdminController
 
         $tour = Tour::create($input);
 
-        //$tour->categories()->attach($request->category_id);
+        $tour->categories()->attach($request->category_id);
 
         session()->flash('message_green', 'Tour successfully added!');
         //return redirect(route('tours.index'));
@@ -59,15 +52,15 @@ class TourController extends AdminController
         //$categories = Tour::find($tour->id)->categories;
         $categories = "";
         $listcategories = Category::orderBy('name', 'asc')->get();
-        $listsub = SubCategory::orderBy('title', 'asc')->get();
+        //$listsub = SubCategory::orderBy('title', 'asc')->get();
         $photos = Photo::where('tour_id', $tour->id)->orderBy('title', 'asc')->get();
         $scheds = TourSchedule::where('tour_id', $tour->id)->get();
-        $prices = TourPrice::where('tour_id', $tour->id)->orderBy('id', 'asc')->get();
-        $faqs = Faq::where('tour_id', $tour->id)->get();
+        //$prices = TourPrice::where('tour_id', $tour->id)->orderBy('id', 'asc')->get();
+        //$faqs = Faq::where('tour_id', $tour->id)->get();
         //$query = DB::getQueryLog();
         //dd($tour->id);
 
-        return view('admin.tours.edit', compact('tour', 'listcategories', 'listsub', 'photos', 'scheds', 'prices', 'faqs', 'categories'));
+        return view('admin.tours.edit', compact('tour', 'listcategories', 'photos', 'scheds',  'categories'));
     }
 
     public function update($id, Request $request){

@@ -27,9 +27,9 @@ class PhotoController extends AdminController
             $replace = array("_");
 
             $imageName = date('YmdHis').$request->image->getClientOriginalName();
-            $request->image->move(public_path('uploads'), str_replace($find,$replace,$imageName));
             $input['image'] = str_replace($find,$replace,$imageName);
-            $input['size'] = $request->image->getClientSize();
+            $input['size'] = $request->image->getSize();
+            $request->image->move(public_path('uploads'), str_replace($find,$replace,$imageName));
         }
 
         if($request->status == 1){

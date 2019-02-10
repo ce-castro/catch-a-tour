@@ -5,8 +5,6 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendors/iCheck/icheck.min.js') }}"></script>
     <script src="{{ asset('vendors/ckeditor/ckeditor.js') }}"></script>
 @endsection
@@ -28,7 +26,7 @@
                     {{ method_field('PATCH') }}
                     <input type="hidden" name="tour_id" value="{{ $photo->tour_id }}">
                     <div class="box-body">
-                        <div class="form-group @if ($errors->has('category_id')) has-error @endif col-sm-12 required">
+                        <div class="form-group @if ($errors->has('type_id')) has-error @endif col-sm-12 required">
                             <label for="category_id" class="col-sm-2 control-label">Type</label>
                             <div class="col-sm-10">
                                 <select name="type_id" id="type_id" class="form-control">
@@ -38,8 +36,8 @@
                                     <option value="3" @if($photo->type_id == 3) selected @endif>Gallery</option>
                                     <option value="4" @if($photo->type_id == 4) selected @endif>Facebook OG</option>
                                 </select>
-                                @if ($errors->has('category_id'))
-                                    <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('category_id')}}</span>
+                                @if ($errors->has('type_id'))
+                                    <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('type_id')}}</span>
                                 @endif
                             </div>
                         </div>

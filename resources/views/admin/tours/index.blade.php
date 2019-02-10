@@ -1,12 +1,11 @@
 @extends('admin.layouts.master')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendors/datatables/datatables.min.css') }}">
 @endsection
 
 @section('js')
-    <script src="{{ asset('vendors/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('vendors/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendors/datatables/datatables.min.js') }}"></script>
 @endsection
 
 @section('title')
@@ -39,7 +38,6 @@
                 <tr>
                     <th>Tour</th>
                     <th>Category</th>
-                    <th>SKU</th>
                     <th>Status</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -49,8 +47,7 @@
                 @foreach($tours as $tour)
                 <tr>
                     <td>{{ $tour->name }}</td>
-                    <td>{{ $tour->category->name }}</td>
-                    <td>{{ $tour->sku }}</td>
+                    <td>{{-- $tour->category->name--}}</td>
                     <td>@if ($tour->status == 1)
                             Active
                         @else
@@ -73,7 +70,6 @@
                 stateSave: true,
                 order: [[ 1, "asc" ]],
                 "columns": [
-                    null,
                     null,
                     null,
                     null,
