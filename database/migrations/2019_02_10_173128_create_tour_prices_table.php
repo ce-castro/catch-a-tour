@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhotosTable extends Migration
+class CreateTourPricesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreatePhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('photos', function (Blueprint $table) {
+        Schema::create('tour_prices', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('type_id');
             $table->integer('tour_id');
-            $table->string('title', 255);
-            $table->string('image', 255)->nullable();
-            $table->float('size');
-            $table->string('description', 255)->nullable();
-            $table->integer('order')->nullable();
+            $table->float('adult_retail');
+            $table->float('adult_discount');
+            $table->float('child_retail');
+            $table->float('child_discount');
             $table->tinyInteger('status');
             $table->timestamps();
         });
@@ -34,6 +32,6 @@ class CreatePhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('photos');
+        Schema::dropIfExists('tour_prices');
     }
 }

@@ -59,6 +59,11 @@ Route::get('/admin/schedules/{schedule}/edit', 'TourScheduleController@edit')->n
 Route::patch('/admin/schedules/{id}', 'TourScheduleController@update')->name('schedules.update');
 Route::get('/admin/schedules/{schedule}/{tour_id}/delete', 'TourScheduleController@destroy')->name('schedules.delete');
 
+Route::post('/admin/tourprices', 'TourPriceController@store')->name('tourprices.store');
+Route::get('/admin/tourprices/{tourprice}/edit', 'TourPriceController@edit')->name('tourprices.edit');
+Route::patch('/admin/tourprices/{id}', 'TourPriceController@update')->name('tourprices.update');
+Route::get('/admin/tourprices/{tourprice}/{tour_id}/delete', 'TourPriceController@destroy')->name('tourprices.delete');
+
 Route::get('/login', 'SessionController@login')->name('login');
 Route::post('/login', 'SessionController@loginStore')->name('login.store');
 Route::get('/logout', 'SessionController@destroy')->name('logout');

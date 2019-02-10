@@ -28,13 +28,10 @@ class SliderController extends AdminController
         $input = $request->except(['status', 'image']);
 
         if ($request->hasFile('image')) {
-            $find = array(" ");
-            $replace = array("_");
-
-            $imageName = date('YmdHis').$request->image->getClientOriginalName();
-            $input['image'] = str_replace($find,$replace,$imageName);
+            $imageName = urlencode($request->image->getClientOriginalName());
+            $input['image'] = $imageName;
             $input['size'] = $request->image->getClientSize();
-            $request->image->move(public_path('uploads'), str_replace($find,$replace,$imageName));
+            $request->image->move(public_path('uploads'), $imageName);
         }
 
         if($request->status == 1){
@@ -43,7 +40,7 @@ class SliderController extends AdminController
             $input['status'] = 0;
         }
 
-        $data = Slider::create($input);
+        Slider::create($input);
 
         session()->flash('message_green', 'Image successfully added!');
         return redirect(route('sliders.index'));
@@ -66,13 +63,10 @@ class SliderController extends AdminController
         $input = $request->except(['status', 'image']);
 
         if ($request->hasFile('image')) {
-            $find = array(" ");
-            $replace = array("_");
-
-            $imageName = date('YmdHis').$request->image->getClientOriginalName();
-            $request->image->move(public_path('uploads'), str_replace($find,$replace,$imageName));
-            $input['image'] = str_replace($find,$replace,$imageName);
+            $imageName = urlencode($request->image->getClientOriginalName());
+            $input['image'] = $imageName;
             $input['size'] = $request->image->getClientSize();
+            $request->image->move(public_path('uploads'), $imageName);
         }
 
         if($request->status == 1){

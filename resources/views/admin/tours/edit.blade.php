@@ -14,7 +14,6 @@ function bytesToHuman($bytes) {
     <link rel="stylesheet" href="{{ asset('vendors/iCheck/square/blue.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/fancybox/jquery.fancybox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendors/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendors/datatables/datatables.min.css') }}">
     <style type="text/css">
         .input_fields_wrap .nuestros {
@@ -33,8 +32,6 @@ function bytesToHuman($bytes) {
     <script src="{{ asset('vendors/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ asset('vendors/fancybox/jquery.fancybox.min.js') }}"></script>
     <script src="{{ asset('vendors/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('vendors/bootstrap-datetimepicker/js/moment-with-locales.min.js') }}"></script>
-    <script src="{{ asset('vendors/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
 @endsection
 
 @section('title')
@@ -217,7 +214,7 @@ function bytesToHuman($bytes) {
                                     </div>
 
                                     <div class="form-group @if ($errors->has('how_to_get')) has-error @endif col-sm-6">
-                                        <label for="url" class="col-sm-2 control-label">How to get</label>
+                                        <label for="url" class="col-sm-2 control-label">Map</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="how_to_get" placeholder="How To Get"
                                                    name="how_to_get" value="{{ $tour->how_to_get }}">
@@ -318,11 +315,11 @@ function bytesToHuman($bytes) {
                                                     <th>Title</th>
                                                     <th>Type</th>
                                                     <th>Dimension</th>
-                                                    <th>Size</th>
+                                                    <th>Order</th>
                                                     <th>Status</th>
                                                     <th style="width: 45px">Edit</th>
                                                     <th style="width: 45px">View</th>
-                                                    <th style="width: 45px">Delete</th>
+                                                    <th style="width: 45px"></th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -346,7 +343,7 @@ function bytesToHuman($bytes) {
                                                         <td>
                                                             <?php echo $size[0]; ?>px by <?php echo $size[1]; ?>px
                                                         </td>
-                                                        <td><?php echo bytesToHuman($photo->size); ?></td>
+                                                        <td>{{ $photo->order }}</td>
                                                         <td>@if ($photo->status == 1)
                                                                 Active
                                                             @else
@@ -431,13 +428,21 @@ function bytesToHuman($bytes) {
                                                     Text</label>
                                                 <div class="col-sm-10">
                                                     <textarea name="description" id="description"
-                                                              class="form-control"></textarea>
+                                                              class="form-control" style="height: 80px !important;"></textarea>
                                                     @if ($errors->has('description'))
                                                         <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('description') }}</span>
                                                     @endif
                                                 </div>
                                             </div>
-
+                                            <div class="form-group @if ($errors->has('order')) has-error @endif col-sm-12">
+                                                <label for="order" class="col-sm-2 control-label">Order</label>
+                                                <div class="col-sm-10">
+                                                    <input type="number" class="form-control" id="order" name="order">
+                                                    @if ($errors->has('order'))
+                                                        <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('order') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
                                             <div class="form-group @if ($errors->has('status')) has-error @endif col-sm-6">
                                                 <label for="status" class="col-sm-4 control-label">Active</label>
                                                 <div class="col-sm-8">
@@ -454,7 +459,6 @@ function bytesToHuman($bytes) {
                                                 <button type="submit"
                                                         class="btn btn-success pull-right btn-flat col-sm-6"><i
                                                             class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;Add
-                                                    Photo
                                                 </button>
                                             </div>
                                         </div>
@@ -476,7 +480,7 @@ function bytesToHuman($bytes) {
                                                     <th>Finish</th>
                                                     <th class="text-center">Status</th>
                                                     <th class="text-center">Edit</th>
-                                                    <th class="text-center">Delete</th>
+                                                    <th class="text-center"></th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -604,8 +608,153 @@ function bytesToHuman($bytes) {
                             </div>
                         </div>
                         <div class="tab-pane @if (Request::route('tab') == "tab_4") active @endif" id="tab_4">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <h3>Prices</h3>
+                                    <div class="box">
+                                        <div class="box-body table-responsive no-padding">
+                                            <table class="table table-hover table-bordered" id="tablita4">
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center">A Retail</th>
+                                                    <th class="text-center">A. Disc.</th>
+                                                    <th class="text-center">C. Retail</th>
+                                                    <th class="text-center">C. Disc.</th>
+                                                    <th class="text-center">Status</th>
+                                                    <th class="text-center"></th>
+                                                    <th class="text-center"></th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($prices as $price)
+                                                    <tr>
+                                                        <td class="text-center">${{ number_format($price->adult_retail, 2) }}</td>
+                                                        <td class="text-center">${{ number_format($price->adult_discount, 2) }}</td>
+                                                        <td class="text-center">${{ number_format($price->child_retail, 2) }}</td>
+                                                        <td class="text-center">${{ number_format($price->child_discount, 2) }}</td>
+                                                        <td class="text-center">
+                                                            @if ($price->status == "1")
+                                                                Active
+                                                            @else
+                                                                Inactive
+                                                            @endif</td>
+                                                        <td class="text-center">
+                                                            <a data-fancybox="iframe"
+                                                               data-src="{{ route('tourprices.edit', [$price->id]) }}"
+                                                               data-type="iframe" href="javascript:;" title="Edit"
+                                                               class="fancy4"><i class="fa fa-pencil-square-o"
+                                                                                 aria-hidden="true"></i></a>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <a href="{{ route('tourprices.delete', [$price->id, $tour->id]) }}"
+                                                               title="Delete"
+                                                               onclick="return confirm('Are you sure?');"><i
+                                                                        class="fa fa-trash" aria-hidden="true"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- /.box-body -->
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <form class="form-horizontal" method="post" action="{{ route('tourprices.store') }}">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" name="tour_id" value="{{ $tour->id }}">
+                                        <div class="box-body" style="padding-top: 0px; border: solid #CCC 1px;">
+                                            <h3>Add a Price</h3>
 
+                                            <div class="form-group @if ($errors->has('adult_retail')) has-error @endif col-sm-12 required">
+                                                <label for="adult_retail" class="col-sm-5 control-label">Adult Retail</label>
+                                                <div class="col-sm-7">
+                                                    <div class='input-group date clock'>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-usd"></span>
+                                                        </span>
+                                                        <input type='text' class="form-control" id="adult_retail" name="adult_retail"/>
+
+                                                    </div>
+                                                    @if ($errors->has('adult_retail'))
+                                                        <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('adult_retail') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group @if ($errors->has('adult_discount')) has-error @endif col-sm-12 required">
+                                                <label for="adult_discount" class="col-sm-5 control-label">Adult Discount</label>
+                                                <div class="col-sm-7">
+                                                    <div class='input-group date clock'>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-usd"></span>
+                                                        </span>
+                                                        <input type='text' class="form-control" id="adult_discount" name="adult_discount"/>
+
+                                                    </div>
+                                                    @if ($errors->has('adult_discount'))
+                                                        <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('adult_discount') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group @if ($errors->has('child_retail')) has-error @endif col-sm-12 required">
+                                                <label for="child_retail" class="col-sm-5 control-label">Child Retail</label>
+                                                <div class="col-sm-7">
+                                                    <div class='input-group date clock'>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-usd"></span>
+                                                        </span>
+                                                        <input type='text' class="form-control" id="child_retail" name="child_retail"/>
+
+                                                    </div>
+                                                    @if ($errors->has('child_retail'))
+                                                        <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('child_retail') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group @if ($errors->has('child_discount')) has-error @endif col-sm-12 required">
+                                                <label for="child_discount" class="col-sm-5 control-label">Child Discount</label>
+                                                <div class="col-sm-7">
+                                                    <div class='input-group date clock'>
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-usd"></span>
+                                                        </span>
+                                                        <input type='text' class="form-control" id="child_discount" name="child_discount"/>
+
+                                                    </div>
+                                                    @if ($errors->has('child_discount'))
+                                                        <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('child_discount') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group @if ($errors->has('status')) has-error @endif col-sm-12">
+                                                <label for="status" class="col-sm-5 control-label">Active</label>
+                                                <div class="col-sm-7">
+                                                    <div class="checkbox icheck">
+                                                        <label><input type="checkbox" value="1" name="status"></label>
+                                                    </div>
+                                                    @if ($errors->has('status'))
+                                                        <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('status') }}</span>
+                                                    @endif
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-sm-12">
+                                                <button type="submit" class="btn btn-success pull-right btn-flat"><i
+                                                            class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;Add
+                                                    Price
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -665,6 +814,14 @@ function bytesToHuman($bytes) {
                 }
             }
         });
+        $(".fancy4").fancybox({
+            iframe: {
+                css: {
+                    width: '500px',
+                    height: '425px'
+                }
+            }
+        });
     </script>
     <script>
         $(function () {
@@ -702,7 +859,7 @@ function bytesToHuman($bytes) {
                     null,
                     {"width": "40px"},
                     {"width": "40px"},
-                    {"width": "40px"}
+                    {"width": "20px"}
                 ]
             });
         });
@@ -721,7 +878,7 @@ function bytesToHuman($bytes) {
                     null,
                     null,
                     {"width": "40px"},
-                    {"width": "40px"}
+                    {"width": "20px"}
                 ]
             });
         });
@@ -739,8 +896,9 @@ function bytesToHuman($bytes) {
                     null,
                     null,
                     null,
-                    {"width": "40px"},
-                    {"width": "40px"}
+                    null,
+                    {"width": "20px"},
+                    {"width": "20px"}
                 ]
             });
         });

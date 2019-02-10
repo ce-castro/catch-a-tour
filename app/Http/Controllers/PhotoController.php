@@ -23,13 +23,10 @@ class PhotoController extends AdminController
         $input = $request->except(['status', 'image']);
 
         if ($request->hasFile('image')) {
-            $find = array(" ");
-            $replace = array("_");
-
-            $imageName = date('YmdHis').$request->image->getClientOriginalName();
-            $input['image'] = str_replace($find,$replace,$imageName);
-            $input['size'] = $request->image->getSize();
-            $request->image->move(public_path('uploads'), str_replace($find,$replace,$imageName));
+            $imageName = urlencode($request->image->getClientOriginalName());
+            $input['image'] = $imageName;
+            $input['size'] = $request->image->getClientSize();
+            $request->image->move(public_path('uploads'), $imageName);
         }
 
         if($request->status == 1){
@@ -60,13 +57,10 @@ class PhotoController extends AdminController
         $input = $request->except(['status', 'image']);
 
         if ($request->hasFile('image')) {
-            $find = array(" ");
-            $replace = array("_");
-
-            $imageName = date('YmdHis').$request->image->getClientOriginalName();
-            $request->image->move(public_path('uploads'), str_replace($find,$replace,$imageName));
-            $input['image'] = str_replace($find,$replace,$imageName);
+            $imageName = urlencode($request->image->getClientOriginalName());
+            $input['image'] = $imageName;
             $input['size'] = $request->image->getClientSize();
+            $request->image->move(public_path('uploads'), $imageName);
         }
 
         if($request->status == 1){

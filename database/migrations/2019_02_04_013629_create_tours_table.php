@@ -20,8 +20,6 @@ class CreateToursTable extends Migration
             $table->string('sku', 20)->nullable();;
             $table->text('desc_top')->nullable();
             $table->text('desc_bottom')->nullable();
-            $table->float('adults')->nullable();;
-            $table->float('child')->nullable();;
             $table->text('available', 255)->nullable();;
             $table->text('duration', 20)->nullable();;
             $table->text('includes')->nullable();

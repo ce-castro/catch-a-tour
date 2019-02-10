@@ -21,7 +21,7 @@
                     <h3 class="box-title">Edit a Picture</h3>
                 </div>
 
-                <form class="form-horizontal" method="post" action="{{ route('photos.update', $photo->id) }}" target="_parent">
+                <form class="form-horizontal" method="post" action="{{ route('photos.update', $photo->id) }}" target="_parent" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
                     <input type="hidden" name="tour_id" value="{{ $photo->tour_id }}">
@@ -65,7 +65,7 @@
                         <div class="form-group @if ($errors->has('description')) has-error @endif col-sm-12">
                             <label for="description" class="col-sm-2 control-label">Alt. Text</label>
                             <div class="col-sm-10">
-                                <textarea name="description" id="description" class="form-control">{{ $photo->description }}</textarea>
+                                <textarea name="description" id="description" class="form-control" style="height: 80px !important;">{{ $photo->description }}</textarea>
                                 @if ($errors->has('description'))
                                     <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('description') }}</span>
                                 @endif
@@ -83,6 +83,17 @@
                                 @endif
                             </div>
                         </div>
+
+                        <div class="form-group @if ($errors->has('title')) has-error @endif col-sm-6">
+                            <label for="order" class="col-sm-2 control-label">Order</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="order" name="order" value="{{ $photo->order }}">
+                                @if ($errors->has('order'))
+                                    <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('order') }}</span>
+                                @endif
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="box-footer">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tour;
+use App\TourPrice;
 use App\Category;
 use App\Photo;
 use App\TourSchedule;
@@ -53,14 +54,14 @@ class TourController extends AdminController
         $categories = "";
         $listcategories = Category::orderBy('name', 'asc')->get();
         //$listsub = SubCategory::orderBy('title', 'asc')->get();
-        $photos = Photo::where('tour_id', $tour->id)->orderBy('title', 'asc')->get();
+        $photos = Photo::where('tour_id', $tour->id)->orderBy('order', 'asc')->get();
         $scheds = TourSchedule::where('tour_id', $tour->id)->get();
-        //$prices = TourPrice::where('tour_id', $tour->id)->orderBy('id', 'asc')->get();
+        $prices = TourPrice::where('tour_id', $tour->id)->orderBy('id', 'asc')->get();
         //$faqs = Faq::where('tour_id', $tour->id)->get();
         //$query = DB::getQueryLog();
         //dd($tour->id);
 
-        return view('admin.tours.edit', compact('tour', 'listcategories', 'photos', 'scheds',  'categories'));
+        return view('admin.tours.edit', compact('tour', 'listcategories', 'photos', 'scheds',  'categories', 'prices'));
     }
 
     public function update($id, Request $request){

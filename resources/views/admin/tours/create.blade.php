@@ -177,7 +177,7 @@
                                     </div>
 
                                     <div class="form-group @if ($errors->has('how_to_get')) has-error @endif col-sm-6">
-                                        <label for="url" class="col-sm-2 control-label">How to get</label>
+                                        <label for="url" class="col-sm-2 control-label">Map</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="how_to_get" placeholder="How To Get"
                                                    name="how_to_get" value="{{ old('how_to_get') }}">
