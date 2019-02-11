@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use File;
 //use DB;
 
@@ -88,7 +89,7 @@ class SliderController extends AdminController
 
     public function destroy($id){
         $slider = Slider::findOrFail($id);
-        //File::delete(public_path('uploads/').$slider->image);
+        File::delete(public_path('uploads/').$slider->image);
         $slider->delete();
 
         session()->flash('message_red', 'Image Deleted');

@@ -27,12 +27,11 @@ class PageController extends AdminController
         $input = $request->except(['status', 'image_og']);
 
         if ($request->hasFile('image_og')) {
-            $find = array(" ");
-            $replace = array("_");
-
-            $imageName = date('YmdHis').$request->image_og->getClientOriginalName();
-            $input['image_og'] = str_replace($find, $replace, $imageName);
-            $request->image_og->move(public_path('uploads'), str_replace($find, $replace, $imageName));
+            $imageName = urlencode($request->image_og->getClientOriginalName());
+            $input['image_og'] = $imageName;
+            $request->file('image_og')->storeAs(
+                'uploads', $imageName, 'public'
+            );
         }
 
         if($request->status == 1){
@@ -62,12 +61,11 @@ class PageController extends AdminController
         $input = $request->except(['status', 'image_og']);
 
         if ($request->hasFile('image_og')) {
-            $find = array(" ");
-            $replace = array("_");
-
-            $imageName = date('YmdHis').$request->image_og->getClientOriginalName();
-            $request->image_og->move(public_path('uploads'), str_replace($find, $replace, $imageName));
-            $input['image_og'] = str_replace($find, $replace, $imageName);
+            $imageName = urlencode($request->image_og->getClientOriginalName());
+            $input['image_og'] = $imageName;
+            $request->file('image_og')->storeAs(
+                'uploads', $imageName, 'public'
+            );
         }
 
         if($request->status == 1){
@@ -85,7 +83,7 @@ class PageController extends AdminController
     public function destroy($id){
         $page = Page::findOrFail($id);
         $page->delete();
-        //File::delete(public_path('uploads/').$page->image);
+        File::delete(public_path('uploads/').$page->image_og);
 
         session()->flash('message_red', 'Page Deleted');
         return redirect(route('pages.index'));

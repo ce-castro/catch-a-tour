@@ -60,8 +60,8 @@
                     <td class="text-center">
                         <a href="/uploads/{{ $page->image_og }}" title="Preview {{ $page->title }}" data-fancybox="gallery"><i class="fa fa-picture-o" aria-hidden="true" title="View OG Image"></i></a>
                     </td>
-                    <td><a href="{{ route('pages.edit', $page->id) }}" title="Edit {{ $page->title }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                    <td><a href="{{ route('pages.delete', $page->id) }}" title="Delete {{ $page->title }}" onclick="return confirm('Delete {{ $page->title }}?');"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                    <td class="text-center"><a href="{{ route('pages.edit', $page->id) }}" title="Edit {{ $page->title }}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                    <td class="text-center"><a href="{{ route('pages.delete', $page->id) }}" title="Delete {{ $page->title }}" onclick="return confirm('Delete {{ $page->title }}?');"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                 </tr>
                 @endforeach
                 </tbody>

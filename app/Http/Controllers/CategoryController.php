@@ -77,4 +77,13 @@ class CategoryController extends Controller {
         session()->flash('message_red', 'Category Deleted');
         return redirect(route('categories.index'));
     }
+
+    public function  getCat($tour_id){
+        $cats = Category::where('category_id', $category_id)->orderBy('title', 'asc')->get();
+        $selectito = "";
+        foreach ($subs as $sub){
+            $selectito .= '$("#sub_category_id").append("<option value='.$sub->id.'>'.$sub->title.'</option>");';
+        }
+        return $selectito;
+    }
 }

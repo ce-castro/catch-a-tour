@@ -764,29 +764,6 @@ function bytesToHuman($bytes) {
 
 @section('scripts')
     <script>
-        $(document).ready(function () {
-            var max_fields = 10; //maximum input boxes allowed
-            var wrapper = $(".input_fields_wrap"); //Fields wrapper
-            var add_button = $(".add_field_button"); //Add button ID
-
-            var x = 1; //initlal text box count
-            $(add_button).click(function (e) { //on add input button click
-                e.preventDefault();
-                if (x < max_fields) { //max input box allowed
-                    x++; //text box increment
-                    //$(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="remove_field">Remove</a></div>'); //add input box
-                    $(wrapper).append('<div class="nuestros"><div class="col-sm-2"><select class="form-control" style="width: 100%;" id="type" name="type[]"><option value="1">By Person</option><option value="2">By Item</option><option value="3">Fixed</option></select></div><div class="col-sm-2"><select class="form-control" style="width: 100%;" id="detail" name="detail[]"><option value="1">Adult</option><option value="2">Child</option></select></div><div class="col-sm-1"><input type="text" class="form-control" id="price_ad" name="price_ad[]" required></div><div class="col-sm-1"><input type="text" class="form-control" id="price_ad" name="price_real[]" required></div><button class="btn btn-danger remove_field"><i class="fa fa-trash" aria-hidden="true"></i></button></div>');
-                }
-            });
-
-            $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
-                e.preventDefault();
-                $(this).parent('div').remove();
-                x--;
-            })
-        });
-    </script>
-    <script>
         $(function () {
             $('.select2').select2();
         });

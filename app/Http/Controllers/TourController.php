@@ -14,11 +14,12 @@ class TourController extends AdminController
 {
     public function index(){
         $tours = Tour::orderBy('name', 'asc')->get();
+        $tours->load('categories');
         return view('admin.tours.index', compact('tours'));
     }
 
     public function create(){
-        $listcategories = Category::orderBy('name', 'asc')->get();
+        $listcategories = Category::where('status','1')->orderBy('name', 'asc')->get();
 //        $listsub = SubCategory::orderBy('title', 'asc')->get();
         return view('admin.tours.create', compact('listcategories'));
     }
@@ -52,7 +53,7 @@ class TourController extends AdminController
         //DB::enableQueryLog();
         //$categories = Tour::find($tour->id)->categories;
         $categories = "";
-        $listcategories = Category::orderBy('name', 'asc')->get();
+        $listcategories = Category::where('status','1')->orderBy('name', 'asc')->get();
         //$listsub = SubCategory::orderBy('title', 'asc')->get();
         $photos = Photo::where('tour_id', $tour->id)->orderBy('order', 'asc')->get();
         $scheds = TourSchedule::where('tour_id', $tour->id)->get();
@@ -70,14 +71,11 @@ class TourController extends AdminController
 
         $this->validate($request, [
             'name' => 'required',
-            'sku' => 'required',
             'url' => 'required',
-            'includes' => 'required',
-            'orden' => 'required',
-            'category_id' => 'required',
+            'order' => 'required',
         ]);
 
-        $input = $request->except(['status']);
+        $input = $request->except(['status', 'category_id']);
 
         if($request->status == 1){
             $input['status'] = 1;
@@ -87,7 +85,7 @@ class TourController extends AdminController
 
         $tour->update($input);
 
-        //$tour->categories()->sync($request->category_id);
+        $tour->categories()->sync($request->category_id);
 
         session()->flash('message_green', 'Tour successfully updated!');
         return redirect(route('tours.edit', [$id, 'tab_1'] ));

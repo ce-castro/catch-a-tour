@@ -47,7 +47,15 @@
                 @foreach($tours as $tour)
                 <tr>
                     <td>{{ $tour->name }}</td>
-                    <td>{{-- $tour->category->name--}}</td>
+                    <td>
+                        @foreach ($tour->categories as $category)
+                            @if($loop->last)
+                                {{ $category->name }}
+                            @else
+                                {{ $category->name }},
+                            @endif
+                        @endforeach
+                    </td>
                     <td>@if ($tour->status == 1)
                             Active
                         @else
@@ -68,11 +76,11 @@
         $(function () {
             $('#data').DataTable({
                 stateSave: true,
-                order: [[ 1, "asc" ]],
+                order: [[ 0, "asc" ]],
                 "columns": [
                     null,
-                    null,
-                    null,
+                    { "width": "200px" },
+                    { "width": "40px" },
                     { "width": "40px" },
                     { "width": "40px" }
                 ]

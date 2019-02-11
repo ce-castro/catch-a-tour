@@ -12,9 +12,9 @@ class Tour extends Model
 //    public function price(){
 //        return $this->hasMany(TourPrice::class);
 //    }
-    public function schedulde(){
-        return $this->hasMany(TourSchedule::class);
-    }
+//    public function schedulde(){
+//        return $this->hasMany(TourSchedule::class);
+//    }
 
     public function pdfconfirmation(){
         return $this->hasMany(PdfConfirmation::class);

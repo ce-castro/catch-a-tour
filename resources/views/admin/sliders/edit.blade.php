@@ -71,9 +71,9 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group @if ($errors->has('order')) has-error @endif col-sm-2 required">
+                        <div class="form-group @if ($errors->has('order')) has-error @endif col-sm-6 required">
                             <label for="order" class="col-sm-4 control-label">Order</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-4">
                                 <input type="number" class="form-control" id="order" name="order" value="{{ $slider->order }}">
                                 @if ($errors->has('order'))
                                     <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('order') }}</span>

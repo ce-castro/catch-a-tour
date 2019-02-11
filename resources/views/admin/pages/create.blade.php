@@ -141,7 +141,7 @@
     </script>
     <script>
         function convert(){
-            $("#url").val(slug($("#title").val()));
+            $("#url").val(slug($("#title").val()) + ".html");
         }
     </script>
 @endsection
