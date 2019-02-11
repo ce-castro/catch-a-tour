@@ -31,7 +31,9 @@ class SliderController extends AdminController
             $imageName = urlencode($request->image->getClientOriginalName());
             $input['image'] = $imageName;
             $input['size'] = $request->image->getClientSize();
-            $request->image->move(public_path('uploads'), $imageName);
+            $request->file('image')->storeAs(
+                'uploads', $imageName, 'public'
+            );
         }
 
         if($request->status == 1){
@@ -66,7 +68,9 @@ class SliderController extends AdminController
             $imageName = urlencode($request->image->getClientOriginalName());
             $input['image'] = $imageName;
             $input['size'] = $request->image->getClientSize();
-            $request->image->move(public_path('uploads'), $imageName);
+            $request->file('image')->storeAs(
+                'uploads', $imageName, 'public'
+            );
         }
 
         if($request->status == 1){

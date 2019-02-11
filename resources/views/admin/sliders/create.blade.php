@@ -42,7 +42,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group @if ($errors->has('title')) has-error @endif col-sm-12 required">
+                        <div class="form-group @if ($errors->has('title')) has-error @endif col-sm-12">
                             <label for="subtitle" class="col-sm-2 control-label">Sub Title</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="subtitle" name="subtitle" value="{{ old('subtitle') }}">
@@ -52,7 +52,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group @if ($errors->has('image')) has-error @endif col-sm-12 required">
+                        <div class="form-group @if ($errors->has('image')) has-error @endif col-sm-12">
                             <label for="image" class="col-sm-2 control-label">Photo</label>
                             <div class="col-sm-10">
                                 <input type="file" class="form-control" id="image" name="image">

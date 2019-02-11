@@ -6,7 +6,6 @@
 
 @section('js')
     <script src="{{ asset('vendors/iCheck/icheck.min.js') }}"></script>
-    <script src="{{ asset('vendors/ckeditor/ckeditor.js') }}"></script>
 @endsection
 
 @section('title')
@@ -43,7 +42,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group @if ($errors->has('subtitle')) has-error @endif col-sm-12 required">
+                        <div class="form-group @if ($errors->has('subtitle')) has-error @endif col-sm-12">
                             <label for="subtitle" class="col-sm-2 control-label">Sub Title</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="subtitle" name="subtitle"  value="{{ $slider->title }}">
@@ -53,7 +52,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group @if ($errors->has('image')) has-error @endif col-sm-12 required">
+                        <div class="form-group @if ($errors->has('image')) has-error @endif col-sm-12">
                             <label for="image" class="col-sm-2 control-label">Photo</label>
                             <div class="col-sm-10">
                                 <input type="file" class="form-control" id="image" name="image">
@@ -63,7 +62,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group @if ($errors->has('url')) has-error @endif col-sm-12 required">
+                        <div class="form-group @if ($errors->has('url')) has-error @endif col-sm-12">
                             <label for="url" class="col-sm-2 control-label">URL</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" id="url" name="url" value="{{ $slider->url }}">
@@ -116,11 +115,6 @@
                 increaseArea: '10%' // optional
             });
         });
-    </script>
-    <script>
-        $(function () {
-            CKEDITOR.replace('.ckeditor')
-        })
     </script>
     <script>
         function convert(){
