@@ -121,6 +121,8 @@ return [
 
     'key' => env('APP_KEY'),
 
+    'google_api_key' => 'AIzaSyCNEW5zttVUsIl9Pc5esemaLwwJ0OTfIp4',
+
     'cipher' => 'AES-256-CBC',
 
     /*

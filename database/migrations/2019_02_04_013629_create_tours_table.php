@@ -25,7 +25,9 @@ class CreateToursTable extends Migration
             $table->text('includes')->nullable();
             $table->text('does_not_include')->nullable();
             $table->text('additional_info', 255)->nullable();
-            $table->text('how_to_get', 255)->nullable();
+            //$table->text('how_to_get', 255)->nullable();
+            $table->text('lat', 10)->nullable();
+            $table->text('lon', 10)->nullable();
             $table->text('keywords', 255)->nullable();
             $table->text('description_html', 255)->nullable();
             $table->text('image_og', 255)->nullable();;
