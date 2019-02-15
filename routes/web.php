@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/cart', 'CartController@view')->name('cart.view');
+
 Route::get('/admin', 'AdminController@index')->name('admin');
 
 Route::get('/admin/categories', 'CategoryController@index')->name('categories.index');
@@ -67,6 +69,9 @@ Route::get('/admin/tourprices/{tourprice}/{tour_id}/delete', 'TourPriceControlle
 Route::get('/login', 'SessionController@login')->name('login');
 Route::post('/login', 'SessionController@loginStore')->name('login.store');
 Route::get('/logout', 'SessionController@destroy')->name('logout');
+
+
+
 
 //Route::get('/', 'MainController@index')->name('main');
 //Route::get('/{id}', 'MainController@page')->name('page');
