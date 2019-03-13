@@ -70,20 +70,13 @@ Route::get('/login', 'SessionController@login')->name('login');
 Route::post('/login', 'SessionController@loginStore')->name('login.store');
 Route::get('/logout', 'SessionController@destroy')->name('logout');
 
-
-
-
-//Route::get('/', 'MainController@index')->name('main');
+Route::get('/', 'MainController@index')->name('main');
 //Route::get('/{id}', 'MainController@page')->name('page');
 
 Route::get('/map', function () {
     return view('welcome');
 });
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 //Auth::routes();
 
