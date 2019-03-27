@@ -1,0 +1,25 @@
+body {
+    font-family: 'Roboto', 'Helvetica', 'Nimbus Sans L', sans-serif;
+}
+.navbar {
+    color: #FFF;
+    background-color: #0F1031;
+    border-radius: 0px;
+    height: 40px;
+    margin-bottom: 0px;
+    min-height: auto;
+}
+.navbar a {
+    color: #FFF;
+    font-size: 12px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 8px;
+    padding-bottom: 10px;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    color: #FFF;
+    background-color: #0F1031;
+}
