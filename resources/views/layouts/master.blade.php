@@ -43,9 +43,62 @@
                     <li style="padding-top: 6px">|</li>
                     <li><a href="#">SIGN UP</a></li>
                 </ul>
+
+                <div class="navbar-right" style="padding-top: 7px">
+                    <a href="#" title="Searchl">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-search fa-stack-1x"></i>
+                        </span>
+                    </a>
+                    <a href="#" title="WhatsApp"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
+                    <a href="#" title="Visit our Facebook page">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-facebook fa-stack-1x"></i>
+                        </span>
+                    </a>
+                    <a href="#" title="Send us an email">
+                        <span class="fa-stack">
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-envelope-o fa-stack-1x"></i>
+                        </span>
+                    </a>
+                </div>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="" class="form-control" id="search">
+                    </div>
+                </form>
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center" id="top-menu">
+                <div id="menu-desktop">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li style="padding-top: 6px">|</li>
+                        <li><a href="#">Catch a tour</a></li>
+                        <li style="padding-top: 6px">|</li>
+                        <li><a href="#">Destinations</a></li>
+                        <li style="padding-top: 6px">|</li>
+                        <li><a href="#">Services</a></li>
+                        <li style="padding-top: 6px">|</li>
+                        <li><a href="#">Gallery</a></li>
+                        <li style="padding-top: 6px">|</li>
+                        <li><a href="#">Reviews</a></li>
+                        <li style="padding-top: 6px">|</li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
     <div class="container">
         {{--@yield('content')--}}
     </div>

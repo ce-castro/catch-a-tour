@@ -1,9 +1,13 @@
 body {
     font-family: 'Roboto', 'Helvetica', 'Nimbus Sans L', sans-serif;
+    background-image: url("/images/home2.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .navbar {
     color: #FFF;
-    background-color: #0F1031;
+    background-color: #160D47;
     border-radius: 0px;
     height: 40px;
     margin-bottom: 0px;
@@ -22,4 +26,39 @@ body {
 .nav > li > a:focus, .nav > li > a:hover {
     color: #FFF;
     background-color: #0F1031;
+}
+
+#search {
+    background-color: #504975;
+    border-radius: 10px;
+    height: 22px;
+    margin: 0px auto;
+    border-color: #504975;
+}
+
+.fa-stack {
+    vertical-align: text-bottom;
+}
+.navbar-right a{
+    text-decoration: none;
+}
+#top-menu {
+    background-color: #FFF;
+    height: 75px;
+}
+#top-menu .navbar-nav a {
+    text-transform: uppercase;
+    color: #160D47;
+    font-size: 14px;
+    padding: 28px 20px 27px 20px;
+}
+#top-menu .navbar-nav li:nth-child(even) {
+    padding-top: 28px !important;
+}
+#top-menu a:hover {
+    color: #FFF;
+    background-color: #EF4A62;
+}
+#menu-desktop {
+    display: inline-block;
 }
