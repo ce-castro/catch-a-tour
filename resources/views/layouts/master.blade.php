@@ -45,7 +45,7 @@
                 </ul>
 
                 <div class="navbar-right" style="padding-top: 7px">
-                    <a href="#" title="Searchl">
+                    <a href="#" title="Search">
                         <span class="fa-stack">
                             <i class="fa fa-circle-thin fa-stack-2x"></i>
                             <i class="fa fa-search fa-stack-1x"></i>
@@ -73,31 +73,61 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center" id="top-menu">
-                <div id="menu-desktop">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li style="padding-top: 6px">|</li>
-                        <li><a href="#">Catch a tour</a></li>
-                        <li style="padding-top: 6px">|</li>
-                        <li><a href="#">Destinations</a></li>
-                        <li style="padding-top: 6px">|</li>
-                        <li><a href="#">Services</a></li>
-                        <li style="padding-top: 6px">|</li>
-                        <li><a href="#">Gallery</a></li>
-                        <li style="padding-top: 6px">|</li>
-                        <li><a href="#">Reviews</a></li>
-                        <li style="padding-top: 6px">|</li>
-                        <li><a href="#">Contact us</a></li>
-                    </ul>
+    <div id="home">
+        <div class="container" >
+            <div class="row">
+                <div class="col-md-12 text-center" id="top-menu">
+                    <div id="menu-desktop">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#" title="Home">Home</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="Catch a Tour">Catch a tour</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="Destinations">Destinations</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="Services">Services</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="Gallery">Gallery</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="Reviews">Reviews</a></li>
+                            <li>|</li>
+                            <li><a href="#" title="Contact us">Contact us</a></li>
+                        </ul>
+                    </div>
+
+
                 </div>
-
-
             </div>
         </div>
-
+        <div class="container-fluid" id="div-pre-logo">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-12 text-center" id="div-logo">
+                        <img src="{{ asset('images/logo.png') }}" alt="Catch a Tour" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="next">
+            <div class="row">
+                <div class="col-md-12 text-center" id="icons">
+                    <i class="fa fa-plane fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-ship fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-bus fa-3x" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-12 text-center">What's your next destination?</div>
+                <div class="col-md-12 text-center"><a href="" title="Check our most popular tours">Check our most popular tours</a></div>
+            </div>
+            <div class="row" style="margin-top: 20px" id="destinations">
+                <div class="col-md-3">
+                    <img src="{{ asset('images/d1.jpg') }}" alt="" class="img-responsive">
+                    <div>test</div>
+                </div>
+                <div class="col-md-3"><img src="{{ asset('images/d2.jpg') }}" alt="" class="img-responsive"></div>
+                <div class="col-md-3"><img src="{{ asset('images/d3.jpg') }}" alt="" class="img-responsive"></div>
+                <div class="col-md-3"><img src="{{ asset('images/d4.jpg') }}" alt="" class="img-responsive"></div>
+            </div>
+        </div>
     </div>
     <div class="container">
         {{--@yield('content')--}}
@@ -105,6 +135,7 @@
     <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendors/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ asset('js/cat.js') }}"></script>
     @yield('js')
     @yield('scripts')
 </body>

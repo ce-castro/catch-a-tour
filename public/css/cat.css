@@ -1,9 +1,12 @@
 body {
     font-family: 'Roboto', 'Helvetica', 'Nimbus Sans L', sans-serif;
+    background-color: #FFF;
+}
+#home {
     background-image: url("/images/home2.jpg");
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% auto;
 }
 .navbar {
     color: #FFF;
@@ -61,4 +64,34 @@ body {
 }
 #menu-desktop {
     display: inline-block;
+}
+#div-pre-logo {
+    background-image: url("/images/blanco.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+#div-logo {
+    display: flex;
+    align-items: flex-end;
+}
+#next {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+#next .row div:nth-child(2){
+    font-size: 21px;
+    font-weight: 500;
+}
+#next .row div:nth-child(3) a{
+    font-size: 18px;
+    font-weight: 300;
+    color: #160D47;
+    text-decoration: none;
+}
+#icons i{
+    color: #160D47;
+    margin: auto 20px;
+}
+#destinations > div{
+    background-size: 100%;
 }
