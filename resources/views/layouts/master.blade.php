@@ -120,12 +120,57 @@
             </div>
             <div class="row" style="margin-top: 20px" id="destinations">
                 <div class="col-md-3">
-                    <img src="{{ asset('images/d1.jpg') }}" alt="" class="img-responsive">
-                    <div>test</div>
+                    <img src="{{ asset('images/d1.jpg') }}" alt="" class="img-responsive destino">
+                    <div class="home-destino">
+                        <div class="row">
+                            <div class="col-md-8"><a href="">Bahia de Jiquilisco</a></div>
+                            <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 pais">El Salvador</div>
+                            <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3"><img src="{{ asset('images/d2.jpg') }}" alt="" class="img-responsive"></div>
-                <div class="col-md-3"><img src="{{ asset('images/d3.jpg') }}" alt="" class="img-responsive"></div>
-                <div class="col-md-3"><img src="{{ asset('images/d4.jpg') }}" alt="" class="img-responsive"></div>
+                <div class="col-md-3">
+                    <img src="{{ asset('images/d2.jpg') }}" alt="" class="img-responsive destino">
+                    <div class="home-destino">
+                        <div class="row">
+                            <div class="col-md-8"><a href="">Quitana Roo</a></div>
+                            <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 pais">Mexico</div>
+                            <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <img src="{{ asset('images/d3.jpg') }}" alt="" class="img-responsive destino">
+                    <div class="home-destino">
+                        <div class="row">
+                            <div class="col-md-8"><a href="">La Habana</a></div>
+                            <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 pais">Cuba</div>
+                            <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <img src="{{ asset('images/d4.jpg') }}" alt="" class="img-responsive destino">
+                    <div class="home-destino">
+                        <div class="row">
+                            <div class="col-md-8"><a href="">Machu Pichu</a></div>
+                            <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 pais">Peru</div>
+                            <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

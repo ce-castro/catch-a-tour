@@ -1,0 +1,66 @@
+#home {
+    background-image: url("/images/home2.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+#div-pre-logo {
+    background-image: url("/images/blanco.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+#div-logo {
+    display: flex;
+    align-items: flex-end;
+}
+#next {
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+#next .row .col-md-12:nth-child(2){
+    font-size: 21px;
+    font-weight: 500;
+}
+#next .row .col-md-12:nth-child(3) a{
+    font-size: 18px;
+    font-weight: 300;
+    color: #160D47;
+}
+#icons i{
+    color: #160D47;
+    margin: auto 20px;
+}
+#destinations > div{
+    background-size: 100%;
+}
+.home-destino {
+    width: calc(100% - 30px);
+    position: absolute;
+    bottom: 0;
+    background: rgba(22, 13, 71, 0.75);
+    padding: 8px 15px;
+    line-height: 1;
+}
+.home-destino, .home-destino a{
+    color: #FFF;
+    font-size: 21px;
+    font-weight: 400;
+    text-shadow: 2px 2px 3px #000000;
+}
+.home-destino .fa{
+    line-height: 2 !important;
+}
+.pais {
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 6px;
+    text-shadow: 2px 2px 3px #000000;
+}
+.btn-cat-home {
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    border-radius: 0px;
+    border: solid 2px #FFF;
+    padding: 1px 8px;
+    line-height: 1.05;
+}
