@@ -173,10 +173,128 @@
                 </div>
             </div>
         </div>
+        <div class="container-fluid" id="remember">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <i class="fa fa-camera fa-3x" aria-hidden="true"></i> <br>
+                        <span class="rem1">To remember is to live again</span><br>
+                        <span class="rem2">Our best moments</span>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-top: 20px; padding-bottom: 40px">
+                    <div class="col-md-3"><img src="{{ asset('images/rem1.jpg') }}" alt="Remember" class="img-responsive"></div>
+                    <div class="col-md-3"><img src="{{ asset('images/rem2.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
+                    <div class="col-md-3"><img src="{{ asset('images/rem3.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
+                    <div class="col-md-3"><img src="{{ asset('images/rem4.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container" id="reviews">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i> <br>
+                    <span class="rem1">Our actions speak louder than our words</span><br>
+                    <span class="rem2">Our customers reviews</span>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px;">
+                <div class="review">
+                    <div class="col-md-12 text-center stars">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    Aenean porta eros ut feugiat dignissim. Vivamus sed mollis nunc. Suspendisse non nibh nunc. Donec nulla felis, bibendum at pulvinar et, molestie sed felis. Nulla tempor hendrerit feugiat. Ut egestas est sit amet turpis ornare rhoncus. Mauris in arcu tristique magna cursus varius.
+                    <div class="author">- Elliot, United States</div>
+                </div>
+                <div class="review">
+                    <div class="col-md-12 text-center stars">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </div>
+                    Aenean porta eros ut feugiat dignissim. Vivamus sed mollis nunc. Suspendisse non nibh nunc. Donec nulla felis, bibendum at pulvinar et, molestie sed felis. Nulla tempor hendrerit feugiat. Ut egestas est sit amet turpis ornare rhoncus. Mauris in arcu tristique magna cursus varius.
+                    <div class="author">- Christina, Colombia</div>
+                </div>
+                <div class="review">
+                    <div class="col-md-12 text-center stars">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    </div>
+                    Aenean porta eros ut feugiat dignissim. Vivamus sed mollis nunc. Suspendisse non nibh nunc. Donec nulla felis, bibendum at pulvinar et, molestie sed felis. Nulla tempor hendrerit feugiat. Ut egestas est sit amet turpis ornare rhoncus. Mauris in arcu tristique magna cursus varius.
+                    <div class="author">- Ruben, Dominic Republic</div>
+                </div>
+                <div class="review">
+                    <div class="col-md-12 text-center stars">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </div>
+                    Aenean porta eros ut feugiat dignissim. Vivamus sed mollis nunc. Suspendisse non nibh nunc. Donec nulla felis, bibendum at pulvinar et, molestie sed felis. Nulla tempor hendrerit feugiat. Ut egestas est sit amet turpis ornare rhoncus. Mauris in arcu tristique magna cursus varius.
+                    <div class="author">- Alfredo, El Salvador</div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="container">
         {{--@yield('content')--}}
     </div>
+    <footer>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row" style="display: flex">
+                    <div class="col-md-3" style="position: relative">
+                        <a href="#" title="Mission" style="position: absolute; bottom: 0">CATCH A TOUR &copy; {{ date('Y') }}</a><br>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-3">
+                            <span>Catch a Tour</span><br>
+                            <a href="#" title="About Us">About Us</a><br>
+                            <a href="#" title="Vision">Vision</a><br>
+                            <a href="#" title="Mission">Mission</a><br>
+                            <a href="#" title="Our Experts">Our Experts</a>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Destinations</span><br>
+                            <a href="#" title="Central">Central America</a><br>
+                            <a href="#" title="North">North America</a><br>
+                            <a href="#" title="South America">South America</a><br>
+                            <a href="#" title="Caribbean">Caribbean</a>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Services</span><br>
+                            <a href="#" title="Private Tours">Private Tours</a><br>
+                            <a href="#" title="Public Tours">Public Tours</a><br>
+                            <a href="#" title="Accommodation">Accommodation</a><br>
+                            <a href="#" title="Transport">Transport</a>
+                        </div>
+                        <div class="col-md-3">
+                            <span>Gallery</span><br>
+                            <a href="#" title="Reviews">Reviews</a><br>
+                            <a href="#" title="Contact">Contact</a><br>
+                        </div>
+                    </div>
+                    <div class="col-md-3" id="newsletter">
+                        <div style="position: absolute; top: 20%;">
+                            Don't miss our deals and offers <br>
+                            <input type="text" placeholder="e-mail address" style="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendors/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendors/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>

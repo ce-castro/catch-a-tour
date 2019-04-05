@@ -5,5 +5,5 @@
 @endsection
 
 @section('title')
-    Catch A Tour | Coming Soon!
+    Catch A Tour | The best tours!
 @endsection

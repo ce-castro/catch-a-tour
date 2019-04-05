@@ -1,23 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.master')
+
+@section('css')
+    <style>
+        img {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+@endsection
+
+@section('title')
+    Catch A Tour | Coming Soon!
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+    <div class="verticalhorizontal">
+        <img src="{{ asset("logo.jpeg") }}" alt="centered image" />
     </div>
-</div>
 @endsection

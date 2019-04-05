@@ -71,7 +71,7 @@ Route::post('/login', 'SessionController@loginStore')->name('login.store');
 Route::get('/logout', 'SessionController@destroy')->name('logout');
 
 Route::get('/dev', 'MainController@dev')->name('home.dev');
-//Route::get('/', 'MainController@index')->name('main');
+Route::get('/', 'MainController@index')->name('main');
 
 //Route::get('/{id}', 'MainController@page')->name('page');
 

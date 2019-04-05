@@ -1,6 +1,15 @@
-@extends('layouts.master')
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>    Catch A Tour | Coming Soon!
+    </title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-@section('css')
+    <link rel="stylesheet" href="https://www.catchatour.com/vendors/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.catchatour.com/vendors/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.catchatour.com/vendors/Ionicons/ionicons.min.css">
     <style>
         img {
             position: fixed;
@@ -10,14 +19,20 @@
             transform: translate(-50%, -50%);
         }
     </style>
-@endsection
+    <script src="https://www.catchatour.com/vendors/jquery/jquery.min.js"></script>
+    <script src="https://www.catchatour.com/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://www.catchatour.com/vendors/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 
-@section('title')
-    Catch A Tour | Coming Soon!
-@endsection
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
 
-@section('content')
+<body>
+<div class="wrapper">
     <div class="verticalhorizontal">
-        <img src="{{ asset("logo.jpeg") }}" alt="centered image" />
+        <img src="https://www.catchatour.com/logo.jpeg" alt="centered image" />
     </div>
-@endsection
+</div>
+
+</body>
+</html>
