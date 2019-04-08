@@ -29,18 +29,25 @@ Route::post('/admin/sliders', 'SliderController@store')->name('sliders.store');
 Route::patch('/admin/sliders/{id}', 'SliderController@update')->name('sliders.update');
 Route::get('/admin/sliders/{slider}/delete', 'SliderController@destroy')->name('sliders.delete');
 
-Route::post('/admin/photos', 'PhotoController@store')->name('photos.store');
-Route::get('/admin/photos/{photo}/edit', 'PhotoController@edit')->name('photos.edit');
-Route::patch('/admin/photos/{id}', 'PhotoController@update')->name('photos.update');
-Route::get('/admin/photos/{photo}/{tour_id}/delete', 'PhotoController@destroy')->name('photos.delete');
-Route::get('/admin/photos/{photo}/{category_id}/deletecat', 'PhotoController@destroycat')->name('photos.deletecat');
-
 Route::get('/admin/pages', 'PageController@index')->name('pages.index');
 Route::get('/admin/pages/create', 'PageController@create')->name('pages.create');
 Route::get('/admin/pages/{page}/edit', 'PageController@edit')->name('pages.edit');
 Route::post('/admin/pages', 'PageController@store')->name('pages.store');
 Route::patch('/admin/pages/{id}', 'PageController@update')->name('pages.update');
 Route::get('/admin/pages/{page}/delete', 'PageController@destroy')->name('pages.delete');
+
+Route::post('/admin/photos', 'PhotoController@store')->name('photos.store');
+Route::get('/admin/photos/{photo}/edit', 'PhotoController@edit')->name('photos.edit');
+Route::patch('/admin/photos/{id}', 'PhotoController@update')->name('photos.update');
+Route::get('/admin/photos/{photo}/{tour_id}/delete', 'PhotoController@destroy')->name('photos.delete');
+Route::get('/admin/photos/{photo}/{category_id}/deletecat', 'PhotoController@destroycat')->name('photos.deletecat');
+
+Route::get('/admin/reviews', 'ReviewController@index')->name('reviews.index');
+Route::get('/admin/reviews/create', 'ReviewController@create')->name('reviews.create');
+Route::get('/admin/reviews/{review}/edit', 'ReviewController@edit')->name('reviews.edit');
+Route::post('/admin/reviews', 'ReviewController@store')->name('reviews.store');
+Route::patch('/admin/reviews/{id}', 'ReviewController@update')->name('reviews.update');
+Route::get('/admin/reviews/{review}/delete', 'ReviewController@destroy')->name('reviews.delete');
 
 Route::get('/admin/tours', 'TourController@index')->name('tours.index');
 Route::get('/admin/tours/create', 'TourController@create')->name('tours.create');
@@ -70,7 +77,7 @@ Route::get('/login', 'SessionController@login')->name('login');
 Route::post('/login', 'SessionController@loginStore')->name('login.store');
 Route::get('/logout', 'SessionController@destroy')->name('logout');
 
-Route::get('/dev', 'MainController@dev')->name('home.dev');
+Route::get('/home.html', 'MainController@home')->name('home');
 Route::get('/', 'MainController@index')->name('main');
 
 //Route::get('/{id}', 'MainController@page')->name('page');

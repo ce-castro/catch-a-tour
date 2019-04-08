@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Review;
 use Illuminate\Http\Request;
 
 class MainController extends Controller{
@@ -10,7 +11,8 @@ class MainController extends Controller{
         return view('index');
     }
 
-    public function dev(){
-        return view('dev');
+    public function home(){
+        $reviews = Review::where('status','1')->orderBy('updated_at', 'desc')->take(4)->get();
+        return view('home', compact('reviews'));
     }
 }

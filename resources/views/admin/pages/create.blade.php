@@ -20,7 +20,7 @@
 @section('bread')
     <ol class="breadcrumb">
         <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="/admin/carts">Pages</a></li>
+        <li><a href="/admin/pages">Pages</a></li>
         <li class="active">Add a Page</li>
     </ol>
 @endsection

@@ -59,7 +59,12 @@ body {
 #menu-desktop {
     display: inline-block;
 }
-
+#main {
+    background-image: url("/images/home2.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
 footer .container-fluid{
     background: #160f49;
     background: -moz-linear-gradient(left, #160f49 0%, #02a7d7 100%);

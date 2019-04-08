@@ -1,9 +1,4 @@
-#home {
-    background-image: url("/images/home2.jpg");
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-}
+
 #div-pre-logo {
     background-image: url("/images/blanco.png");
     background-position: center bottom;
@@ -44,7 +39,7 @@
     padding: 8px 15px;
     line-height: 1;
 }
-.home-destino, .home-destino a{
+.home-destino, .home-destino a, .home-destino a:hover {
     color: #FFF;
     font-size: 21px;
     font-weight: 400;

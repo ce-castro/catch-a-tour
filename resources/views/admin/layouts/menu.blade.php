@@ -1,6 +1,4 @@
 <ul class="sidebar-menu" data-widget="tree">
-    <li class="header">HEADER</li>
-
     <!-- Optionally, you can add icons to the links -->
     <li><a href="{{ asset('/admin') }}"><i class="fa fa-home"></i> <span>Home</span></a></li>
 
@@ -109,6 +107,24 @@
             </li>
         </ul>
     </li>
+
+    @if (Auth::user()->role_id == 1)
+        <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/reviews") !== false) active menu-open @endif">
+            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> <span>Reviews</span>
+                <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+            </a>
+            <ul class="treeview-menu">
+                <li @if($_SERVER['REDIRECT_URL'] == "/admin/reviews") class="active" @endif>
+                    <a href="{{ asset('/admin/reviews') }}"><i class="fa fa-list" aria-hidden="true"></i> View</a>
+                </li>
+                <li @if($_SERVER['REDIRECT_URL'] == "/admin/reviews/create") class="active" @endif>
+                    <a href="{{ asset('/admin/reviews/create') }}"><i class="fa fa-plus" aria-hidden="true"></i> Add</a>
+                </li>
+            </ul>
+        </li>
+    @endif
 
     @if (Auth::user()->role_id == 1)
     <li class="treeview @if(strpos($_SERVER['REDIRECT_URL'], "/admin/users") !== false) active menu-open @endif">
