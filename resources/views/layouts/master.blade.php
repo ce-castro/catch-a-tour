@@ -159,6 +159,7 @@
         </div>
     </footer>
     <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>
+    {{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>--}}
     <script src="{{ asset('vendors/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendors/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
     <script src="{{ asset('js/cat.js') }}"></script>

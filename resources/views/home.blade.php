@@ -20,59 +20,83 @@
             <div class="col-md-12 text-center"><a href="" title="Check our most popular tours">Check our most popular tours</a></div>
         </div>
         <div class="row" style="margin-top: 20px" id="destinations">
-            <div class="col-md-3">
-                <img src="{{ asset('images/d1.jpg') }}" alt="" class="img-responsive destino">
-                <div class="home-destino">
-                    <div class="row">
-                        <div class="col-md-8"><a href="">Bahia de Jiquilisco</a></div>
-                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+            <div class="col-md-12" style="padding: 0px">
+                <div class="carousel slide multi-item-carousel" id="theCarousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="col-md-3">
+                                <img src="{{ asset('images/d1.jpg') }}" alt="" class="img-responsive destino">
+                                <div class="home-destino">
+                                    <div class="row">
+                                        <div class="col-md-8"><a href="">Bahia de Jiquilisco</a></div>
+                                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 pais">El Salvador</div>
+                                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-3">
+                                <img src="{{ asset('images/d2.jpg') }}" alt="" class="img-responsive destino">
+                                <div class="home-destino">
+                                    <div class="row">
+                                        <div class="col-md-8"><a href="">Quitana Roo</a></div>
+                                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 pais">Mexico</div>
+                                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-3">
+                                <img src="{{ asset('images/d3.jpg') }}" alt="" class="img-responsive destino">
+                                <div class="home-destino">
+                                    <div class="row">
+                                        <div class="col-md-8"><a href="">La Habana</a></div>
+                                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 pais">Cuba</div>
+                                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="col-md-3">
+                                <img src="{{ asset('images/d4.jpg') }}" alt="" class="img-responsive destino">
+                                <div class="home-destino">
+                                    <div class="row">
+                                        <div class="col-md-8"><a href="">Machu Pichu</a></div>
+                                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 pais">Peru</div>
+                                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-8 pais">El Salvador</div>
-                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
-                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#theCarousel" data-slide-to="1"></li>
+                        <li data-target="#theCarousel" data-slide-to="2"></li>
+                        <li data-target="#theCarousel" data-slide-to="3"></li>
+                    </ol>
+                    <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <img src="{{ asset('images/d2.jpg') }}" alt="" class="img-responsive destino">
-                <div class="home-destino">
-                    <div class="row">
-                        <div class="col-md-8"><a href="">Quitana Roo</a></div>
-                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 pais">Mexico</div>
-                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <img src="{{ asset('images/d3.jpg') }}" alt="" class="img-responsive destino">
-                <div class="home-destino">
-                    <div class="row">
-                        <div class="col-md-8"><a href="">La Habana</a></div>
-                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 pais">Cuba</div>
-                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <img src="{{ asset('images/d4.jpg') }}" alt="" class="img-responsive destino">
-                <div class="home-destino">
-                    <div class="row">
-                        <div class="col-md-8"><a href="">Machu Pichu</a></div>
-                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-8 pais">Peru</div>
-                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
-                    </div>
-                </div>
+
             </div>
         </div>
+
     </div>
     <div class="container-fluid" id="remember">
         <div class="container">
