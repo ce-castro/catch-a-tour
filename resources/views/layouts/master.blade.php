@@ -46,23 +46,19 @@
 
                 <div class="navbar-right" style="padding-top: 7px">
                     <a href="#" title="Search">
-                        <span class="fa-stack">
-                            <i class="fa fa-circle-thin fa-stack-2x"></i>
-                            <i class="fa fa-search fa-stack-1x"></i>
-                        </span>
+                       <img src="{{ asset('images/search.png') }}" >
                     </a>
-                    <a href="#" title="WhatsApp"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a>
+                    <a href="#" title="WhatsApp">
+                        <img src="{{ asset('images/whatsapp.png') }}" >
+                    </a>
                     <a href="#" title="Visit our Facebook page">
-                        <span class="fa-stack">
-                            <i class="fa fa-circle-thin fa-stack-2x"></i>
-                            <i class="fa fa-facebook fa-stack-1x"></i>
-                        </span>
+                        <img src="{{ asset('images/facebook.png') }}" >
                     </a>
                     <a href="#" title="Send us an email">
-                        <span class="fa-stack">
-                            <i class="fa fa-circle-thin fa-stack-2x"></i>
-                            <i class="fa fa-envelope-o fa-stack-1x"></i>
-                        </span>
+                        <img src="{{ asset('images/email.png') }}" >
+                    </a>
+                    <a href="#" title="My Cart">
+                        <img src="{{ asset('images/cart.png') }}" style="margin-left: 35px" >
                     </a>
                 </div>
                 <form class="navbar-form navbar-right">

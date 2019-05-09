@@ -21,7 +21,7 @@
         </div>
         <div class="row" style="margin-top: 20px" id="destinations">
             <div class="col-md-12" style="padding: 0px">
-                <div class="carousel slide multi-item-carousel" id="theCarousel">
+                <div class="carousel slide multi-item-carousel" id="slide-destination">
                     <div class="carousel-inner">
                         <div class="item active">
                             <div class="col-md-3">
@@ -85,13 +85,13 @@
                         </div>
                     </div>
                     <ol class="carousel-indicators">
-                        <li data-target="#theCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#theCarousel" data-slide-to="1"></li>
-                        <li data-target="#theCarousel" data-slide-to="2"></li>
-                        <li data-target="#theCarousel" data-slide-to="3"></li>
+                        <li data-target="#slide-destination" data-slide-to="0" class="active"></li>
+                        <li data-target="#slide-destination" data-slide-to="1"></li>
+                        <li data-target="#slide-destination" data-slide-to="2"></li>
+                        <li data-target="#slide-destination" data-slide-to="3"></li>
                     </ol>
-                    <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-                    <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+                    <a class="left carousel-control" href="#slide-destination" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+                    <a class="right carousel-control" href="#slide-destination" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
                 </div>
 
             </div>
@@ -109,10 +109,32 @@
             </div>
 
             <div class="row" style="margin-top: 20px; padding-bottom: 40px">
-                <div class="col-md-3"><img src="{{ asset('images/rem1.jpg') }}" alt="Remember" class="img-responsive"></div>
-                <div class="col-md-3"><img src="{{ asset('images/rem2.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
-                <div class="col-md-3"><img src="{{ asset('images/rem3.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
-                <div class="col-md-3"><img src="{{ asset('images/rem4.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
+                <div class="col-md-12" style="padding: 0px">
+                    <div class="carousel slide multi-item-carousel" id="slide-remember">
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="col-md-3"><img src="{{ asset('images/rem1.jpg') }}" alt="Remember" class="img-responsive"></div>
+                            </div>
+                            <div class="item">
+                                <div class="col-md-3"><img src="{{ asset('images/rem2.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
+                            </div>
+                            <div class="item">
+                                <div class="col-md-3"><img src="{{ asset('images/rem3.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
+                            </div>
+                            <div class="item">
+                                <div class="col-md-3"><img src="{{ asset('images/rem4.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
+                            </div>
+                        </div>
+                        <ol class="carousel-indicators">
+                            <li data-target="#slide-remember" data-slide-to="0" class="active"></li>
+                            <li data-target="#slide-remember" data-slide-to="1"></li>
+                            <li data-target="#slide-remember" data-slide-to="2"></li>
+                            <li data-target="#slide-remember" data-slide-to="3"></li>
+                        </ol>
+                        <a class="left carousel-control" href="#slide-remember" data-slide="prev" style="width: 1%"><i class="glyphicon glyphicon-chevron-left" style="color: #FFF;"></i></a>
+                        <a class="right carousel-control" href="#slide-remember" data-slide="next" style="width: 1%"><i class="glyphicon glyphicon-chevron-right" style="color: #FFF;"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
