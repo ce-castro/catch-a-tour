@@ -23,66 +23,33 @@
             <div class="col-md-12" style="padding: 0px">
                 <div class="carousel slide multi-item-carousel" id="slide-destination">
                     <div class="carousel-inner">
-                        <div class="item active">
+
+                        @foreach($tours as $tour)
+                        <div class="item @if ($loop->first) active @endif">
                             <div class="col-md-3">
-                                <img src="{{ asset('images/d1.jpg') }}" alt="" class="img-responsive destino">
+                                @foreach ($tour->photos as $photo)
+                                    @if($photo->type_id == '1')
+                                        <img src="{{ asset('uploads/'.$photo->image) }}" alt="{{ $photo->name }}"  title="{{ $photo->name }}" class="img-responsive img-destino">
+                                    @else
+                                        <img src="{{ asset('images/logo_placeholder.jpg') }}" alt="{{ $tour->name }}"  title="{{ $tour->name }}" class="img-responsive img-destino">
+                                    @endif
+                                @endforeach
+
+{{--                                <img src="{{ asset('images/d1.jpg') }}" alt="{{ $tour->name }}"  title="{{ $tour->name }}" class="img-responsive destino">--}}
                                 <div class="home-destino">
                                     <div class="row">
-                                        <div class="col-md-8"><a href="">Bahia de Jiquilisco</a></div>
+                                        <div class="col-md-8"><a href="{{ route('tour.show', $tour->url) }}" title="{{ $tour->name }}">{{ $tour->name }}</a></div>
                                         <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-8 pais">El Salvador</div>
-                                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
+                                        <div class="col-md-4 text-center"><a href="{{ route('tour.show', $tour->url) }}" title="{{ $tour->name }}" class="btn btn-cat-home">Book</a></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="col-md-3">
-                                <img src="{{ asset('images/d2.jpg') }}" alt="" class="img-responsive destino">
-                                <div class="home-destino">
-                                    <div class="row">
-                                        <div class="col-md-8"><a href="">Quitana Roo</a></div>
-                                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-8 pais">Mexico</div>
-                                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-md-3">
-                                <img src="{{ asset('images/d3.jpg') }}" alt="" class="img-responsive destino">
-                                <div class="home-destino">
-                                    <div class="row">
-                                        <div class="col-md-8"><a href="">La Habana</a></div>
-                                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-8 pais">Cuba</div>
-                                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-md-3">
-                                <img src="{{ asset('images/d4.jpg') }}" alt="" class="img-responsive destino">
-                                <div class="home-destino">
-                                    <div class="row">
-                                        <div class="col-md-8"><a href="">Machu Pichu</a></div>
-                                        <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-8 pais">Peru</div>
-                                        <div class="col-md-4 text-center"><a href="" class="btn btn-cat-home">Book</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
                     <ol class="carousel-indicators">
                         <li data-target="#slide-destination" data-slide-to="0" class="active"></li>

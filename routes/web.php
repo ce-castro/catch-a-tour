@@ -79,6 +79,7 @@ Route::get('/logout', 'SessionController@destroy')->name('logout');
 
 Route::get('/home.html', 'MainController@home')->name('home');
 Route::get('/', 'MainController@index')->name('main');
+Route::get('/tour/{slug}', 'ViewTourController@show')->name('tour.show');
 
 //Route::get('/{id}', 'MainController@page')->name('page');
 

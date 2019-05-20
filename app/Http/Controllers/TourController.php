@@ -8,7 +8,6 @@ use App\Category;
 use App\Photo;
 use App\TourSchedule;
 use Illuminate\Http\Request;
-//use DB;
 
 class TourController extends AdminController
 {
@@ -50,8 +49,7 @@ class TourController extends AdminController
     }
 
     public function edit(Tour $tour){
-        //DB::enableQueryLog();
-        //$categories = Tour::find($tour->id)->categories;
+
         $categories = "";
         $listcategories = Category::where('status','1')->orderBy('name', 'asc')->get();
         //$listsub = SubCategory::orderBy('title', 'asc')->get();
@@ -59,8 +57,6 @@ class TourController extends AdminController
         $scheds = TourSchedule::where('tour_id', $tour->id)->get();
         $prices = TourPrice::where('tour_id', $tour->id)->orderBy('id', 'asc')->get();
         //$faqs = Faq::where('tour_id', $tour->id)->get();
-        //$query = DB::getQueryLog();
-        //dd($tour->id);
 
         return view('admin.tours.edit', compact('tour', 'listcategories', 'photos', 'scheds',  'categories', 'prices'));
     }
