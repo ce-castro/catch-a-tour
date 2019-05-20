@@ -15,6 +15,8 @@ class CreateReviewsTable extends Migration {
             $table->increments('id');
             $table->string('code', 2);
             $table->string('name', 100);
+            $table->tinyInteger('status');
+            $table->timestamps();
         });
     }
 

@@ -32,7 +32,7 @@ class CreateToursTable extends Migration
             $table->text('description_html', 255)->nullable();
             $table->text('image_og', 255)->nullable();;
             $table->integer('order');
-            $table->tinyInteger('recommended');
+            $table->tinyInteger('recommended')->nullable();
             $table->tinyInteger('status');
             $table->timestamps();
         });

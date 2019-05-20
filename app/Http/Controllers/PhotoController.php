@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Photo;
+use Validator;
 use Illuminate\Http\Request;
 use File;
 
@@ -15,10 +16,23 @@ class PhotoController extends AdminController
 
     public function store(Request $request){
 
-        $this->validate($request, [
+//        $this->validate($request, [
+//            'title' => 'required',
+//            'type_id' => 'required'
+//        ]);
+
+        $validator = Validator::make($request->all(), [
             'title' => 'required',
             'type_id' => 'required'
         ]);
+
+        if ($validator->fails()) {
+            if($request->tour_id!='') {
+                return redirect(route('tours.edit', [$request->tour_id, 'tab_2']));
+            } else {
+                return redirect(route('categories.edit', [$request->category_id, 'tab_2']));
+            }
+        }
 
         $input = $request->except(['status', 'image']);
 

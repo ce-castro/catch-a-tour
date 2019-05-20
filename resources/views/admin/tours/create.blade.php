@@ -176,7 +176,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group @if ($errors->has('how_to_get')) has-error @endif col-sm-6">
+                                    {{-- <div class="form-group @if ($errors->has('how_to_get')) has-error @endif col-sm-6">
                                         <label for="url" class="col-sm-2 control-label">Map</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="how_to_get" placeholder="How To Get"
@@ -185,7 +185,7 @@
                                                 <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('how_to_get')}}</span>
                                             @endif
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                     <div class="form-group @if ($errors->has('order')) has-error @endif col-sm-6 required">
                                         <label for="order" class="col-sm-2 control-label">Order:</label>
