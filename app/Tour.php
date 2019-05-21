@@ -12,6 +12,9 @@ class Tour extends Model
     public function photos(){
         return $this->hasMany(Photo::class);
     }
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
 
 //    public function price(){
 //        return $this->hasMany(TourPrice::class);

@@ -16,7 +16,7 @@ class CreateReviewsTable extends Migration {
             $table->integer('tour_id');
             $table->string('name', 50);
             $table->string('country', 200);
-            $table->float('stars', 4, 2)
+            $table->float('stars', 4, 2);
             $table->text('review');
             $table->tinyInteger('status');
             $table->timestamps();

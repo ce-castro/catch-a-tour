@@ -165,3 +165,8 @@
     width: 262px;
     height: 262px;
 }
+.review .text {
+    width: 100%;
+    height: 175px;
+    overflow-y: hidden;
+}

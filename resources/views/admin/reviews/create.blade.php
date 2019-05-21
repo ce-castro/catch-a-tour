@@ -39,6 +39,21 @@
                     {{ csrf_field() }}
                     <div class="box-body">
 
+                        <div class="form-group @if ($errors->has('tour_id')) has-error @endif required col-sm-12">
+                            <label for="tour" class="col-sm-2 control-label">Tour</label>
+                            <div class="col-sm-10">
+                                <select name="tour_id" id="tour_id" class="form-control select2">
+                                    <option value="">Please select..</option>
+                                    @foreach($tours as $tour)
+                                        <option value="{{ $tour->id }}" @if($tour->id == old('tour_id')) selected @endif>{{ $tour->name }}</option>
+                                    @endforeach
+                                </select>
+                                @if ($errors->has('tour_id'))
+                                    <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('tour_id')}}</span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group @if ($errors->has('name')) has-error @endif required col-sm-12">
                             <label for="name" class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
@@ -52,7 +67,7 @@
                         <div class="form-group @if ($errors->has('stars')) has-error @endif required col-sm-5">
                             <label for="stars" class="col-sm-5 control-label">Stars</label>
                             <div class="col-sm-7">
-                                <input type="number" step="0.50" max="5" min="0" class="form-control" id="stars" placeholder="Stars" name="stars" value="{{ old('stars') }}">
+                                <input type="number" step="1" max="5" min="0" class="form-control" id="stars" placeholder="Stars" name="stars" value="{{ old('stars') }}">
                                 @if ($errors->has('stars'))
                                     <span class="help-block"><i class="fa fa-times-circle-o"></i>{{ $errors->first('stars')}}</span>
                                 @endif

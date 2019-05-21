@@ -4,18 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Review;
 use App\Country;
+use App\Tour;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller {
 
     public function index() {
         $reviews = Review::orderBy('name', 'asc')->get();
+        $reviews->load('tours');
         return view('admin.reviews.index', compact('reviews'));
     }
 
     public function create(){
         $countries = Country::orderBy('name', 'asc')->get();
-        return view('admin.reviews.create', compact('countries'));
+        $tours = Tour::where('status', '1')->orderBy('name', 'asc')->get();
+        return view('admin.reviews.create', compact('countries', 'tours'));
     }
 
 
@@ -24,7 +27,8 @@ class ReviewController extends Controller {
             'name' => 'required',
             'country' => 'required',
             'stars' => 'required',
-            'review' => 'required'
+            'review' => 'required',
+            'tour_id' => 'required'
         ]);
 
         $input = $request->except(['status', 'image']);
@@ -51,7 +55,8 @@ class ReviewController extends Controller {
 
     public function edit(Review $review) {
         $countries = Country::orderBy('name', 'asc')->get();
-        return view('admin.reviews.edit', compact('review', 'countries'));
+        $tours = Tour::orderBy('name', 'asc')->get();
+        return view('admin.reviews.edit', compact('review', 'countries', 'tours'));
     }
 
     public function update($id, Request $request) {
@@ -61,7 +66,8 @@ class ReviewController extends Controller {
             'name' => 'required',
             'country' => 'required',
             'stars' => 'required',
-            'review' => 'required'
+            'review' => 'required',
+            'tour_id' => 'required'
         ]);
 
         $input = $request->except(['status', 'image']);
