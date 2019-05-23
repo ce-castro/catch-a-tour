@@ -34,8 +34,6 @@
                                         <img src="{{ asset('images/logo_placeholder.jpg') }}" alt="{{ $tour->name }}"  title="{{ $tour->name }}" class="img-responsive img-destino">
                                     @endif
                                 @endforeach
-
-{{--                                <img src="{{ asset('images/d1.jpg') }}" alt="{{ $tour->name }}"  title="{{ $tour->name }}" class="img-responsive destino">--}}
                                 <div class="home-destino">
                                     <div class="row">
                                         <div class="col-md-8"><a href="{{ route('tour.show', $tour->url) }}" title="{{ $tour->name }}">{{ $tour->name }}</a></div>
