@@ -55,6 +55,7 @@ body {
 #top-menu a:hover {
     color: #FFF;
     background-color: #EF4A62;
+    height: 85px;
 }
 #menu-desktop {
     display: inline-block;
@@ -75,7 +76,7 @@ footer .container-fluid{
     text-decoration: none;
     font-weight: 300;
     color: #FFF;
-    padding: 30px 0px;
+    padding: 40px 0px;
     line-height: 2.0;
 }
 footer .container-fluid a{
@@ -108,4 +109,7 @@ footer .container-fluid span{
 .navbar-right img {
     vertical-align: baseline;
     margin: 0px 2px;
+}
+#trip-advisor {
+    margin-top: -41px;
 }

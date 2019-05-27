@@ -107,7 +107,7 @@ function bytesToHuman($bytes){
         $(function () {
             $('#data').DataTable({
                 stateSave: true,
-                order: [[ 1, "asc" ]],
+                order: [[ 0, "asc" ]],
                 "columns": [
                     null,
                     null,

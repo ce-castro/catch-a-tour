@@ -42,16 +42,6 @@
                             </div>
                         </div>
 
-                        <div class="form-group @if ($errors->has('subtitle')) has-error @endif col-sm-12">
-                            <label for="subtitle" class="col-sm-2 control-label">Sub Title</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="subtitle" name="subtitle"  value="{{ $slider->title }}">
-                                @if ($errors->has('subtitle'))
-                                    <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('subtitle') }}</span>
-                                @endif
-                            </div>
-                        </div>
-
                         <div class="form-group @if ($errors->has('image')) has-error @endif col-sm-12">
                             <label for="image" class="col-sm-2 control-label">Photo</label>
                             <div class="col-sm-10">

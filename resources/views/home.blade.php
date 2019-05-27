@@ -9,12 +9,15 @@
 @endsection
 
 @section('content')
+    <div id="chat">
+        <a href="#chat-link"><img src="{{ asset('images/chat.png') }}"></a>
+    </div>
     <div class="container" id="next">
         <div class="row">
             <div class="col-md-12 text-center" id="icons">
-                <i class="fa fa-plane fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-ship fa-3x" aria-hidden="true"></i>
-                <i class="fa fa-bus fa-3x" aria-hidden="true"></i>
+                <img src="{{ asset('images/avion.png') }}" alt="Air Travel">
+                <img src="{{ asset('images/bote.png') }}" alt="Boat Travels">
+                <img src="{{ asset('images/bus.png') }}" alt="Bus Travel">
             </div>
             <div class="col-md-12 text-center">What's your next destination?</div>
             <div class="col-md-12 text-center"><a href="" title="Check our most popular tours">Check our most popular tours</a></div>
@@ -50,10 +53,9 @@
 
                     </div>
                     <ol class="carousel-indicators">
-                        <li data-target="#slide-destination" data-slide-to="0" class="active"></li>
-                        <li data-target="#slide-destination" data-slide-to="1"></li>
-                        <li data-target="#slide-destination" data-slide-to="2"></li>
-                        <li data-target="#slide-destination" data-slide-to="3"></li>
+                        @for ($i = 0; $i < count($tours); $i++)
+                        <li data-target="#slide-destination" data-slide-to="{{ $i }}" @if($i == '0') class="active" @endif></li>
+                        @endfor
                     </ol>
                     <a class="left carousel-control" href="#slide-destination" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
                     <a class="right carousel-control" href="#slide-destination" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
@@ -67,8 +69,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <i class="fa fa-camera fa-3x" aria-hidden="true"></i> <br>
-                    <span class="rem1">To remember is to live again</span><br>
+                    <img src="{{ asset('images/camara.png') }}" class="img-icon">
+                    <span class="rem1">To remember is to live again</span>
                     <span class="rem2">Our best moments</span>
                 </div>
             </div>
@@ -77,24 +79,16 @@
                 <div class="col-md-12" style="padding: 0px">
                     <div class="carousel slide multi-item-carousel" id="slide-remember">
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="col-md-3"><img src="{{ asset('images/rem1.jpg') }}" alt="Remember" class="img-responsive"></div>
+                            @foreach($sliders as $slider)
+                            <div class="item @if ($loop->first) active @endif">
+                                <div class="col-md-3"><img src="{{ asset('uploads/'.$slider->image) }}" alt="{{ $slider->title }}" class="img-responsive"></div>
                             </div>
-                            <div class="item">
-                                <div class="col-md-3"><img src="{{ asset('images/rem2.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
-                            </div>
-                            <div class="item">
-                                <div class="col-md-3"><img src="{{ asset('images/rem3.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
-                            </div>
-                            <div class="item">
-                                <div class="col-md-3"><img src="{{ asset('images/rem4.jpg') }}" alt="Catch a Tour" class="img-responsive"></div>
-                            </div>
+                            @endforeach
                         </div>
                         <ol class="carousel-indicators">
-                            <li data-target="#slide-remember" data-slide-to="0" class="active"></li>
-                            <li data-target="#slide-remember" data-slide-to="1"></li>
-                            <li data-target="#slide-remember" data-slide-to="2"></li>
-                            <li data-target="#slide-remember" data-slide-to="3"></li>
+                            @for ($i = 0; $i < count($sliders); $i++)
+                            <li data-target="#slide-remember" data-slide-to="{{ $i }}" @if($i == '0') class="active" @endif></li>
+                            @endfor
                         </ol>
                         <a class="left carousel-control" href="#slide-remember" data-slide="prev" style="width: 1%"><i class="glyphicon glyphicon-chevron-left" style="color: #FFF;"></i></a>
                         <a class="right carousel-control" href="#slide-remember" data-slide="next" style="width: 1%"><i class="glyphicon glyphicon-chevron-right" style="color: #FFF;"></i></a>
@@ -106,8 +100,8 @@
     <div class="container" id="reviews">
         <div class="row">
             <div class="col-md-12 text-center">
-                <i class="fa fa-check-circle fa-3x" aria-hidden="true"></i> <br>
-                <span class="rem1">Our actions speak louder than our words</span><br>
+                <img src="{{ asset('images/cheque.png') }}" class="img-icon">
+                <span class="rem1">Our actions speak louder than our words</span>
                 <span class="rem2">Our customers reviews</span>
             </div>
         </div>

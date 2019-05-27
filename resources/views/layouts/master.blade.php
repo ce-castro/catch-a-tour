@@ -90,8 +90,6 @@
                             <li><a href="#" title="Contact us">Contact us</a></li>
                         </ul>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -106,15 +104,13 @@
         </div>
         @yield('content')
     </div>
-    <div class="container">
-        {{--@yield('content')--}}
-    </div>
     <footer>
         <div class="container-fluid">
             <div class="container">
                 <div class="row" style="display: flex">
                     <div class="col-md-3" style="position: relative">
-                        <a href="#" title="Mission" style="position: absolute; bottom: 0">CATCH A TOUR &copy; {{ date('Y') }}</a><br>
+                        <a href="#" title="Read Catch a Tour in TripAdvisor" ><img src="{{ asset('images/trip.png') }}" alt="Read Catch a Tour in TripAdvisor" id="trip-advisor"></a>
+                        <a href="#" title="Mission" style="position: absolute; bottom: 0; display: block;">CATCH A TOUR &copy; {{ date('Y') }}</a><br>
                     </div>
                     <div class="col-md-6">
                         <div class="col-md-3">
@@ -145,17 +141,17 @@
                         </div>
                     </div>
                     <div class="col-md-3" id="newsletter">
-                        <div style="position: absolute; top: 20%;">
+                        <div style="">
                             Don't miss our deals and offers <br>
                             <input type="text" placeholder="e-mail address" style="">
                         </div>
+                        <img src="{{ asset('images/cards.png') }}" alt="We accept credit cards" class="img-responsive" style="margin-top: 35px">
                     </div>
                 </div>
             </div>
         </div>
     </footer>
     <script src="{{ asset('vendors/jquery/jquery.min.js') }}"></script>
-    {{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>--}}
     <script src="{{ asset('vendors/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('vendors/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
     <script src="{{ asset('js/cat.js') }}"></script>
