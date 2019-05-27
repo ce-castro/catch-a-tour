@@ -34,8 +34,6 @@
                                         <img src="{{ asset('images/logo_placeholder.jpg') }}" alt="{{ $tour->name }}"  title="{{ $tour->name }}" class="img-responsive img-destino">
                                     @endif
                                 @endforeach
-
-{{--                                <img src="{{ asset('images/d1.jpg') }}" alt="{{ $tour->name }}"  title="{{ $tour->name }}" class="img-responsive destino">--}}
                                 <div class="home-destino">
                                     <div class="row">
                                         <div class="col-md-8"><a href="{{ route('tour.show', $tour->url) }}" title="{{ $tour->name }}">{{ $tour->name }}</a></div>
@@ -114,50 +112,24 @@
             </div>
         </div>
         <div class="row" style="margin-top: 20px;">
+
+            @foreach($reviews as $review)
             <div class="review">
                 <div class="col-md-12 text-center stars">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
+                    @for ($i = 1; $i <= $review->stars; $i++)
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    @endfor
+                    @for ($i = 1; $i <= (5-$review->stars); $i++)
+                        <i class="fa fa-star-o" aria-hidden="true"></i>
+                    @endfor
                 </div>
-                Aenean porta eros ut feugiat dignissim. Vivamus sed mollis nunc. Suspendisse non nibh nunc. Donec nulla felis, bibendum at pulvinar et, molestie sed felis. Nulla tempor hendrerit feugiat. Ut egestas est sit amet turpis ornare rhoncus. Mauris in arcu tristique magna cursus varius.
-                <div class="author">- Elliot, United States</div>
-            </div>
-            <div class="review">
-                <div class="col-md-12 text-center stars">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                <div class="text">
+                    {{ strip_tags($review->review) }}
                 </div>
-                Aenean porta eros ut feugiat dignissim. Vivamus sed mollis nunc. Suspendisse non nibh nunc. Donec nulla felis, bibendum at pulvinar et, molestie sed felis. Nulla tempor hendrerit feugiat. Ut egestas est sit amet turpis ornare rhoncus. Mauris in arcu tristique magna cursus varius.
-                <div class="author">- Christina, Colombia</div>
+
+                <div class="author">- {{ $review->name }}, {{ $review->country }}</div>
             </div>
-            <div class="review">
-                <div class="col-md-12 text-center stars">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                </div>
-                Aenean porta eros ut feugiat dignissim. Vivamus sed mollis nunc. Suspendisse non nibh nunc. Donec nulla felis, bibendum at pulvinar et, molestie sed felis. Nulla tempor hendrerit feugiat. Ut egestas est sit amet turpis ornare rhoncus. Mauris in arcu tristique magna cursus varius.
-                <div class="author">- Ruben, Dominic Republic</div>
-            </div>
-            <div class="review">
-                <div class="col-md-12 text-center stars">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                </div>
-                Aenean porta eros ut feugiat dignissim. Vivamus sed mollis nunc. Suspendisse non nibh nunc. Donec nulla felis, bibendum at pulvinar et, molestie sed felis. Nulla tempor hendrerit feugiat. Ut egestas est sit amet turpis ornare rhoncus. Mauris in arcu tristique magna cursus varius.
-                <div class="author">- Alfredo, El Salvador</div>
-            </div>
+            @endforeach
         </div>
     </div>
 @endsection

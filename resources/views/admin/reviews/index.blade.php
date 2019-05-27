@@ -38,6 +38,7 @@
             <table id="data" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                    <th>Tour</th>
                     <th>Name</th>
                     <th>Country</th>
                     <th>Stars</th>
@@ -50,6 +51,7 @@
                 <tbody>
                 @foreach($reviews as $review)
                 <tr>
+                    <td>{{ $review->tours->name }}</td>
                     <td>{{ $review->name}}</td>
                     <td>{{ $review->country }}</td>
                     <td>{{ $review->stars }}</td>
@@ -81,6 +83,7 @@
                 "columns": [
                     null,
                     null,
+                    { "width": "110px" },
                     { "width": "50px" },
                     { "width": "90px" },
                     { "width": "40px" },
