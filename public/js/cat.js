@@ -1,6 +1,11 @@
 $(document).ready(function() {
     var divImage = $(window).height() - 115;
-    $("#div-logo").css('height', divImage+'px');
+
+    if($(window).height()<=960){
+        $("#div-logo").css('height', divImage+'px');
+    } else {
+        $("#div-logo").css('height','760px');
+    }
 });
 
 $(window).on('load', function(){

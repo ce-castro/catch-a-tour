@@ -113,3 +113,16 @@ footer .container-fluid span{
 #trip-advisor {
     margin-top: -41px;
 }
+
+#chat {
+    position: fixed;
+    float: right;
+    right: 0;
+    bottom: 10%;
+    z-index: 100;
+}
+@media(max-width:1367px) {
+    #chat {
+        bottom: 25%;
+    }
+}
