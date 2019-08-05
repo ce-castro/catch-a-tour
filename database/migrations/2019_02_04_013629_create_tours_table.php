@@ -17,7 +17,8 @@ class CreateToursTable extends Migration
             $table->increments('id');
             $table->string('name', 255);
             $table->string('url', 255);
-            $table->string('sku', 20)->nullable();;
+            $table->string('sku', 20)->nullable();
+            $table->integer('country_id');
             $table->text('desc_top')->nullable();
             $table->text('desc_bottom')->nullable();
             $table->text('available', 255)->nullable();;

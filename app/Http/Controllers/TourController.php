@@ -7,6 +7,7 @@ use App\TourPrice;
 use App\Category;
 use App\Photo;
 use App\TourSchedule;
+use App\Country;
 use Illuminate\Http\Request;
 
 class TourController extends AdminController
@@ -19,8 +20,9 @@ class TourController extends AdminController
 
     public function create(){
         $listcategories = Category::where('status','1')->orderBy('name', 'asc')->get();
+        $countries = Country::orderBy('name', 'asc')->get();
 //        $listsub = SubCategory::orderBy('title', 'asc')->get();
-        return view('admin.tours.create', compact('listcategories'));
+        return view('admin.tours.create', compact('listcategories', 'countries'));
     }
 
     public function store(Request $request){
@@ -28,7 +30,7 @@ class TourController extends AdminController
         $this->validate($request, [
             'name' => 'required',
             'url' => 'required',
-            'order' => 'required',
+            'country_id' => 'required'
         ]);
 
         $input = $request->except(['status', 'category_id']);
@@ -56,9 +58,10 @@ class TourController extends AdminController
         $photos = Photo::where('tour_id', $tour->id)->orderBy('order', 'asc')->get();
         $scheds = TourSchedule::where('tour_id', $tour->id)->get();
         $prices = TourPrice::where('tour_id', $tour->id)->orderBy('id', 'asc')->get();
+        $countries = Country::orderBy('name', 'asc')->get();
         //$faqs = Faq::where('tour_id', $tour->id)->get();
 
-        return view('admin.tours.edit', compact('tour', 'listcategories', 'photos', 'scheds',  'categories', 'prices'));
+        return view('admin.tours.edit', compact('tour', 'listcategories', 'photos', 'scheds',  'categories', 'prices', 'countries'));
     }
 
     public function update($id, Request $request){
@@ -68,7 +71,7 @@ class TourController extends AdminController
         $this->validate($request, [
             'name' => 'required',
             'url' => 'required',
-            'order' => 'required',
+            'country' => 'required'
         ]);
 
         $input = $request->except(['status', 'category_id']);

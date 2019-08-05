@@ -106,7 +106,6 @@ function bytesToHuman($bytes) {
                                     <div class="form-group @if ($errors->has('category_id')) has-error @endif col-sm-6 required">
                                         <label for="category_id" class="col-sm-2 control-label">Category</label>
                                         <div class="col-sm-10">
-
                                             <select name="category_id[]" id="category_id" class="form-control select2"
                                                     multiple="multiple">
                                                 <option value="">Please select..</option>
@@ -120,10 +119,8 @@ function bytesToHuman($bytes) {
                                             @if ($errors->has('category_id'))
                                                 <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('category_id')}}</span>
                                             @endif
-
                                         </div>
                                     </div>
-
 
                                     <div class="form-group @if ($errors->has('sku')) has-error @endif col-sm-6">
                                         <label for="url" class="col-sm-2 control-label">SKU</label>
@@ -132,6 +129,37 @@ function bytesToHuman($bytes) {
                                                    name="sku" value="{{ $tour->sku }}">
                                             @if ($errors->has('sku'))
                                                 <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('sku')}}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group @if ($errors->has('country_id')) has-error @endif col-sm-6 required">
+                                        <label for="country_id" class="col-sm-2 control-label">Country</label>
+                                        <div class="col-sm-10">
+                                            <select name="country_id" id="country_id" class="form-control"
+                                                    multiple="multiple">
+                                                <option value="">Please select..</option>
+                                                @foreach($countries as $country)
+                                                    <option value="{{ $country->id }}" @if($country->id == $tour->country_id) selected @endif >
+                                                        {{ $country->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            @if ($errors->has('country_id'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('country_id')}}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group @if ($errors->has('recommended')) has-error @endif col-sm-6">
+                                        <label for="recommended" class="col-sm-4 control-label">Show in Homepage</label>
+                                        <div class="col-sm-6">
+                                            <div class="checkbox icheck">
+                                                <label><input type="checkbox" value="1" name="recommended"
+                                                              @if ($tour->recommended == 1) checked @endif></label>
+                                            </div>
+                                            @if ($errors->has('recommended'))
+                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('recommended')}}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -224,9 +252,9 @@ function bytesToHuman($bytes) {
                                         </div>
                                     </div> --}}
 
-                                    <div class="form-group @if ($errors->has('order')) has-error @endif col-sm-6 required">
-                                        <label for="order" class="col-sm-2 control-label">Order</label>
-                                        <div class="col-sm-10">
+                                    <div class="form-group @if ($errors->has('order')) has-error @endif col-sm-4">
+                                        <label for="order" class="col-sm-3 control-label">Order</label>
+                                        <div class="col-sm-6">
                                             <input type="number" class="form-control" id="order" placeholder="Order"
                                                    name="order" value="{{ $tour->order }}">
                                             @if ($errors->has('order'))
@@ -244,19 +272,6 @@ function bytesToHuman($bytes) {
                                             </div>
                                             @if ($errors->has('status'))
                                                 <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('status')}}</span>
-                                            @endif
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group @if ($errors->has('recommended')) has-error @endif col-sm-6">
-                                        <label for="recommended" class="col-sm-2 control-label">Home page</label>
-                                        <div class="col-sm-10">
-                                            <div class="checkbox icheck">
-                                                <label><input type="checkbox" value="1" name="recommended"
-                                                              @if ($tour->recommended == 1) checked @endif></label>
-                                            </div>
-                                            @if ($errors->has('recommended'))
-                                                <span class="help-block"><i class="fa fa-times-circle-o"></i> {{ $errors->first('recommended')}}</span>
                                             @endif
                                         </div>
                                     </div>
@@ -766,6 +781,9 @@ function bytesToHuman($bytes) {
     <script>
         $(function () {
             $('.select2').select2();
+            $("#country_id").select2({
+                maximumSelectionLength: 1
+            });
         });
         $(".fancy1").fancybox({
             iframe: {

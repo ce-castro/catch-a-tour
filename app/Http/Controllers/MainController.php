@@ -21,10 +21,6 @@ class MainController extends Controller{
         $sliders = Slider::where('status', 1)->orderBy('order', 'asc')->get();
         $tours->load('categories');
         $tours->load('photos');
-
-        //dd($tours);
         return view('home', compact('reviews', 'tours', 'sliders'));
-
-
     }
 }
