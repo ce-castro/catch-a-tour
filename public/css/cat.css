@@ -61,9 +61,8 @@ body {
     padding-top: 28px !important;
 }
 
-#top-menu a:hover,
-#top-menu a:focus {
-    color: #FFF;
+#top-menu a:hover, #top-menu a:focus, .top-link-selected {
+    color: #FFF !important;
     background-color: #EF4A62;
     height: 85px;
 }

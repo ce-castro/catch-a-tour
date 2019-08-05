@@ -75,11 +75,11 @@
                 <div class="col-md-12 text-center" id="top-menu">
                     <div id="menu-desktop">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="home.html" title="Home">Home</a></li>
+                            <li class="active"><a href="home.html" title="Home" class="@if ($page=="home.html") top-link-selected  @endif">Home</a></li>
                             <li>|</li>
-                            <li><a href="#" title="Catch a Tour">Catch a tour</a></li>
+                            <li><a href="catchatour.html" title="Catch a Tour"  class="@if ($page=="catchatour.html") top-link-selected  @endif">Catch a tour</a></li>
                             <li>|</li>
-                            <li><a href="destinations.html" title="Destinations">Destinations</a></li>
+                            <li><a href="destinations.html" title="Destinations" class="@if ($page=="destinations.html") top-link-selected  @endif">Destinations</a></li>
                             <li>|</li>
                             <li><a href="#" title="Services">Services</a></li>
                             <li>|</li>

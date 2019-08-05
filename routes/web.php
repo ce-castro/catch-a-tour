@@ -77,9 +77,10 @@ Route::get('/login', 'SessionController@login')->name('login');
 Route::post('/login', 'SessionController@loginStore')->name('login.store');
 Route::get('/logout', 'SessionController@destroy')->name('logout');
 
-Route::get('/home.html', 'MainController@home')->name('home');
 Route::get('/', 'MainController@index')->name('main');
+Route::get('/home.html', 'MainController@home')->name('home');
 Route::get('/destinations.html', 'MainController@destinations')->name('destinations');
+Route::get('/catchatour.html', 'MainController@catchatour')->name('catchatour');
 Route::get('/tour/{slug}', 'ViewTourController@show')->name('tour.show');
 
 //Route::get('/{id}', 'MainController@page')->name('page');
