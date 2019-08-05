@@ -23,4 +23,8 @@ class MainController extends Controller{
         $tours->load('photos');
         return view('home', compact('reviews', 'tours', 'sliders'));
     }
+
+    public function destinations() {
+        return view('destinations');
+    }
 }

@@ -71,7 +71,7 @@ class TourController extends AdminController
         $this->validate($request, [
             'name' => 'required',
             'url' => 'required',
-            'country' => 'required'
+            'country_id' => 'required'
         ]);
 
         $input = $request->except(['status', 'category_id']);

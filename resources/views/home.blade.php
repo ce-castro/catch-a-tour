@@ -12,6 +12,15 @@
     <div id="chat">
         <a href="#chat-link"><img src="{{ asset('images/chat.png') }}"></a>
     </div>
+    <div class="container-fluid" id="div-pre-logo">
+        <div class="container">
+            <div class="row" >
+                <div class="col-md-12 text-center" id="div-logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Catch a Tour" class="img-responsive">
+                </div>
+            </div>
+        </div>
+    </div>    
     <div class="container" id="next">
         <div class="row">
             <div class="col-md-12 text-center" id="icons">
@@ -43,7 +52,7 @@
                                         <div class="col-md-4 text-center"><i class="fa fa-suitcase" aria-hidden="true"></i></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-8 pais">El Salvador</div>
+                                    <div class="col-md-8 pais">{{ $tour->country->name }}</div>
                                         <div class="col-md-4 text-center"><a href="{{ route('tour.show', $tour->url) }}" title="{{ $tour->name }}" class="btn btn-cat-home">Book</a></div>
                                     </div>
                                 </div>

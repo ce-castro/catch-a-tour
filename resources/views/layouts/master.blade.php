@@ -75,11 +75,11 @@
                 <div class="col-md-12 text-center" id="top-menu">
                     <div id="menu-desktop">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#" title="Home">Home</a></li>
+                            <li class="active"><a href="home.html" title="Home">Home</a></li>
                             <li>|</li>
                             <li><a href="#" title="Catch a Tour">Catch a tour</a></li>
                             <li>|</li>
-                            <li><a href="#" title="Destinations">Destinations</a></li>
+                            <li><a href="destinations.html" title="Destinations">Destinations</a></li>
                             <li>|</li>
                             <li><a href="#" title="Services">Services</a></li>
                             <li>|</li>
@@ -89,15 +89,6 @@
                             <li>|</li>
                             <li><a href="#" title="Contact us">Contact us</a></li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid" id="div-pre-logo">
-            <div class="container">
-                <div class="row" >
-                    <div class="col-md-12 text-center" id="div-logo">
-                        <img src="{{ asset('images/logo.png') }}" alt="Catch a Tour" class="img-responsive">
                     </div>
                 </div>
             </div>

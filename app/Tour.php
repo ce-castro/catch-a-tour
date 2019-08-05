@@ -4,8 +4,6 @@ namespace App;
 
 class Tour extends Model
 {
-    //protected $fillable = ['category_id', 'name', 'url', 'sku', 'description', 'runs', 'duration', 'departs', 'includes', 'kids_age', 'dont_forget', 'orden', 'status', 'created_at', 'updated_at'];
-
     public function category(){
         return $this->belongsTo(Category::class);
     }
@@ -29,5 +27,9 @@ class Tour extends Model
 
     public function categories(){
         return $this->belongsToMany(Category::class);
+    }
+
+    public function country(){
+        return $this->belongsTo(Country::class);
     }
 }
