@@ -125,7 +125,7 @@ function bytesToHuman($bytes) {
                                     </div>
 
 
-                                    <div class="form-group @if ($errors->has('sku')) has-error @endif col-sm-6 required">
+                                    <div class="form-group @if ($errors->has('sku')) has-error @endif col-sm-6">
                                         <label for="url" class="col-sm-2 control-label">SKU</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="sku" placeholder="SKU #"
@@ -249,7 +249,7 @@ function bytesToHuman($bytes) {
                                     </div>
 
                                     <div class="form-group @if ($errors->has('recommended')) has-error @endif col-sm-6">
-                                        <label for="recommended" class="col-sm-2 control-label">Recomm</label>
+                                        <label for="recommended" class="col-sm-2 control-label">Home page</label>
                                         <div class="col-sm-10">
                                             <div class="checkbox icheck">
                                                 <label><input type="checkbox" value="1" name="recommended"

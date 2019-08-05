@@ -1,32 +1,41 @@
-
 #div-pre-logo {
     background-image: url("/images/blanco.png");
     background-position: center bottom;
     background-repeat: no-repeat;
 }
+
 #div-logo {
     display: flex;
     align-items: flex-end;
 }
+
 #next {
     margin-top: 25px;
     margin-bottom: 20px;
 }
-#next .row .col-md-12:nth-child(2), .rem1{
+
+#next .row .col-md-12:nth-child(2),
+.rem1 {
     font-size: 21px;
     font-weight: 500;
 }
-#next .row .col-md-12:nth-child(3) a, .rem2{
+
+#next .row .col-md-12:nth-child(3) a,
+.rem2 {
     font-size: 18px;
     font-weight: 300;
     color: #160D47;
 }
-#remember i, #reviews i {
+
+#remember i,
+#reviews i {
     margin-bottom: 5px;
 }
-#destinations > div{
+
+#destinations>div {
     background-size: 100%;
 }
+
 .home-destino {
     width: calc(100% - 30px);
     position: absolute;
@@ -35,21 +44,27 @@
     padding: 8px 15px;
     line-height: 1;
 }
-.home-destino, .home-destino a, .home-destino a:hover {
+
+.home-destino,
+.home-destino a,
+.home-destino a:hover {
     color: #FFF;
     font-size: 21px;
     font-weight: 400;
     text-shadow: 2px 2px 3px #000000;
 }
-.home-destino .fa{
+
+.home-destino .fa {
     line-height: 2 !important;
 }
+
 .pais {
     font-size: 15px;
     font-weight: 300;
     margin-top: 6px;
     text-shadow: 2px 2px 3px #000000;
 }
+
 .btn-cat-home {
     font-size: 14px !important;
     font-weight: 300 !important;
@@ -58,24 +73,29 @@
     padding: 1px 8px;
     line-height: 1.05;
 }
+
 #remember {
     background-color: #F2F2F2;
     padding-top: 20px;
     line-height: 1.2;
 }
+
 .rem1 {
     color: #160D47;
     display: block;
     margin-bottom: 5px;
 }
+
 .rem2 {
     display: block;
 }
+
 #reviews {
     margin-top: 20px;
     line-height: 1.2;
     margin-bottom: 20px;
 }
+
 .review {
     border: 1px dashed #160D47;
     color: #160D47;
@@ -91,43 +111,53 @@
     clear: right;
     padding: 25px 1.5%;
 }
+
 .review .author {
     color: #EF4A62;
     font-style: normal;
     margin-top: 15px;
     font-weight: 500;
 }
+
 .stars {
     padding-bottom: 15px;
 }
-.stars i{
+
+.stars i {
     margin: auto 2px !important;
     color: #EF4A62 !important;
     font-size: 18px;
 }
+
 #reviews .col-md-3 {
     padding-top: 25px;
     padding-bottom: 25px;
     margin: auto 15px;
 }
 
-.multi-item-carousel .carousel-inner > .item {
+.multi-item-carousel .carousel-inner>.item {
     transition: 500ms ease-in-out left;
 }
+
 .multi-item-carousel .carousel-inner .active.left {
     left: -25%;
 }
+
 .multi-item-carousel .carousel-inner .active.right {
     left: 25%;
 }
+
 .multi-item-carousel .carousel-inner .next {
     left: 25%;
 }
+
 .multi-item-carousel .carousel-inner .prev {
     left: -25%;
 }
-@media all and (transform-3d), (-webkit-transform-3d) {
-    .multi-item-carousel .carousel-inner > .item {
+
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+    .multi-item-carousel .carousel-inner>.item {
         transition: 500ms ease-in-out left;
         transition: 500ms ease-in-out all;
         -webkit-backface-visibility: visible;
@@ -136,48 +166,59 @@
         transform: none!important;
     }
 }
+
 .multi-item-carousel .carouse-control.left,
 .multi-item-carousel .carouse-control.right {
     background-image: none;
 }
+
 .carousel-control {
     width: 6.5%;
     background-image: none !important;
-    bottom: 80px;
+    height: 180px;
     opacity: 1;
 }
-.carousel-indicators{
+
+.carousel-indicators {
     margin-top: 25px;
     margin-bottom: 5px;
     bottom: 0px;
     position: inherit;
 }
+
 .carousel-indicators .active {
     background-color: #504975;
     width: 16px;
     height: 16px;
 }
+
 .carousel-indicators li {
     border: 1px solid #504975;
     width: 15px;
     height: 15px;
 }
+
 .img-destino {
     width: 262px;
     height: 262px;
 }
+
 .review .text {
     width: 100%;
     height: 175px;
     overflow-y: hidden;
 }
+
 #slide-remember .col-md-3 {
     height: 200px;
 }
+
 #slide-remember img {
     height: 100%;
 }
-#icons img, .img-icon {
+
+#icons img,
+.img-icon {
     margin: 0 1.5%;
     margin-bottom: 10px;
 }
